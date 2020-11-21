@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5SQd9wm3+eE/oDfhuReqB59znULstqNU3jtA3eli7WUGhRvPoIhr/0AFrWZOQgpyDUm18FHRVCcWcqfIs95D4Q==",
+  "dgSpecHash": "D8xPSn0Ve6Cs05ALHa5eZBTxBQhQgex+IvXkZTBL0+vb4L4eHL/E1lwmyTBjdoVlZMmjHWeoGRDJc3i7KuLF4A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\emanu\\Desktop\\Trabajos\\Registro-y-control-de-extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\faoal\\Documents\\GitHub\\Registro-y-control-de-extintores\\Registro_y_Control_de_Extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\faoal\\.nuget\\packages\\mysqlconnector\\1.1.0\\mysqlconnector.1.1.0.nupkg.sha512"
+  ],
   "logs": []
 }
