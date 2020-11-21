@@ -6,11 +6,11 @@
 
 @model Registro_y_control_de_extintores.Controllers.Inicio_de_sesionController
 
-<form asp-action="Autenticar_usuario" asp-controller="Inicio_de_sesion" method="POST">
+<form asp-action="Autenticar_usuario" asp-controller="Inicio_de_sesion" method="GET">
 
     <div class="container">
         <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" id="uname" name="uname" required>
+        <input type="text" placeholder="Enter Username" name="uname" required>
         <br>
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
