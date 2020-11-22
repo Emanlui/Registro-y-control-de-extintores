@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\emanu\\Desktop\\Trabajos\\Registro-y-control-de-extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores.csproj": {}
+    "C:\\Users\\emanu\\Desktop\\Trabajos\\Registro-y-control-de-extintores\\Registro_y_Control_de_Extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores.csproj": {}
   },
   "projects": {
-    "C:\\Users\\emanu\\Desktop\\Trabajos\\Registro-y-control-de-extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores.csproj": {
+    "C:\\Users\\emanu\\Desktop\\Trabajos\\Registro-y-control-de-extintores\\Registro_y_Control_de_Extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emanu\\Desktop\\Trabajos\\Registro-y-control-de-extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores.csproj",
+        "projectUniqueName": "C:\\Users\\emanu\\Desktop\\Trabajos\\Registro-y-control-de-extintores\\Registro_y_Control_de_Extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores.csproj",
         "projectName": "Registro_y_control_de_extintores",
-        "projectPath": "C:\\Users\\emanu\\Desktop\\Trabajos\\Registro-y-control-de-extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores.csproj",
+        "projectPath": "C:\\Users\\emanu\\Desktop\\Trabajos\\Registro-y-control-de-extintores\\Registro_y_Control_de_Extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores.csproj",
         "packagesPath": "C:\\Users\\emanu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emanu\\Desktop\\Trabajos\\Registro-y-control-de-extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores\\obj\\",
+        "outputPath": "C:\\Users\\emanu\\Desktop\\Trabajos\\Registro-y-control-de-extintores\\Registro_y_Control_de_Extintores\\Registro_y_control_de_extintores\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -41,6 +41,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
