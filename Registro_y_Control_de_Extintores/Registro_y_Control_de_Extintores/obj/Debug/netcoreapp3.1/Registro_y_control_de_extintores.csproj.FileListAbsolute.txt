@@ -106,7 +106,6 @@ C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Cont
 C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.dll
 C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.pdb
 C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.genruntimeconfig.cache
-C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\Centro\Crear.cshtml.g.cs
 C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
 C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
 C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
@@ -123,4 +122,4 @@ C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Cont
 C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.csproj.CoreCompileInputs.cache
 C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\Centro\Eliminar.cshtml.g.cs
+C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\Centro\Administrar.cshtml.g.cs

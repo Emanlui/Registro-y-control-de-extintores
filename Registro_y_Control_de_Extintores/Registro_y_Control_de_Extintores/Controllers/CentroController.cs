@@ -13,12 +13,7 @@ namespace Registro_y_control_de_extintores.Controllers
         CrudUsuario crud = new CrudUsuario();
         CentroDeTrabajoModel ctm = new CentroDeTrabajoModel();
 
-        public IActionResult Crear()
-        {
-            return View();
-        }
-
-        public IActionResult Eliminar()
+        public IActionResult Administrar()
         {
             return View();
         }

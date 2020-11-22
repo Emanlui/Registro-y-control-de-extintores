@@ -1,0 +1,52 @@
+﻿@model Registro_y_control_de_extintores.Models.CentroDeTrabajoModel
+
+<h2 align="center">Acción a realizar</h2>
+<hr />
+
+
+<h4>Ingresar un centro de trabajo</h4><br>
+<div class="row" align="center">
+    <div class="col-md-12">
+        <form asp-action="CrearRequest" >
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+                <div class="col">
+                    <h5 style="font-weight:normal;">Nombre del centro de trabajo: </h5>
+                </div>
+                <div class="col">
+                    <input asp-for="Nombre" class="form-control" />
+                    <br>
+                    <input style="max-width:30%;" type="submit" value="Agregar" class="btn btn-primary btn-lg btn-block" />
+                </div>
+            </div>
+            <br>
+            
+        </form>
+    </div>
+</div>
+
+<h4>Eliminar un centro de trabajo</h4><br>
+<div class="row" align="center">
+    <div class="col-md-12">
+        <form asp-action="EliminarRequest">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+                <div class="col">
+                    <h5 style="font-weight:normal;">Nombre del centro de trabajo: </h5>
+                </div>
+                <div class="col">
+                    <input asp-for="Nombre" class="form-control" />
+                    <br>
+                    <input style="max-width:30%;" type="submit" value="Eliminar" class="btn btn-primary btn-lg btn-block" />
+                </div>
+            </div>
+            <br>
+</form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
