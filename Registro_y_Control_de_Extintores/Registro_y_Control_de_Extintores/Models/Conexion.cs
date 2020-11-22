@@ -24,42 +24,5 @@ namespace Registro_y_control_de_extintores.Models
         }
     }
 
-    class CrudUsuario : Conexion
-    {
-        //Crear Usuario
-
-        public void Crear_Centro()
-        {
-            con.Open();
-            using (MySqlCommand cmd = new MySqlCommand())
-            {
-                cmd.CommandText = "Insert into centro_de_trabajo (nombre) VALUES(@nombre)";
-                cmd.CommandType = CommandType.Text;
-                cmd.Connection = con;
-
-                cmd.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = centro.Nombre;
-
-                cmd.ExecuteNonQuery();
-                con.Close();
-
-            }
-        }
-
-        public void Eliminar_Centro()
-        {
-            con.Open();
-            using (MySqlCommand cmd = new MySqlCommand())
-            {
-                cmd.CommandText = "Delete from centro_de_trabajo Where nombre=@nombre";
-                cmd.CommandType = CommandType.Text;
-                cmd.Connection = con;
-
-                cmd.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = centro.Nombre;
-
-                cmd.ExecuteNonQuery();
-                con.Close();
-
-            }
-        }
-    }
+   
 }

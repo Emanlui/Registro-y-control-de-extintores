@@ -13,6 +13,10 @@ namespace Registro_y_control_de_extintores.Controllers
         CrudUsuario crud = new CrudUsuario();
         CentroDeTrabajoModel ctm = new CentroDeTrabajoModel();
 
+        public string prueba()
+        {
+            return "Hola, esta es una prueba" + User.Identity.Name;
+        }
         public IActionResult Administrar()
         {
             return View();
