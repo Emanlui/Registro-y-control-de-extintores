@@ -1,10 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "Rzpt39ORgLNnNEgGIVe23DrQ2kxxZe4vmIzG9OnxfasID/zHCzHsb9tqtuOPR1hGFjrjKaw8cCtNPSRCvPPR4Q==",
+  "dgSpecHash": "w0TmTIZrMPHd+9o2IjXmqLWsOe0YKPu1QK2ovcg6RoX47KI10rgXvmNyrdvMO6a7ZJDY4M8o9qWfukLNZl32tw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kevin\\Desktop\\.Materias segundo semestre\\Proyecto\\Registro-y-control-de-extintores\\Registro_y_Control_de_Extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores.csproj",
+  "projectFilePath": "C:\\Users\\Kevin\\Desktop\\.Materias segundo semestre\\Proyecto\\Repo\\Registro_y_Control_de_Extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Kevin\\.nuget\\packages\\mysqlconnector\\1.1.0\\mysqlconnector.1.1.0.nupkg.sha512"
+    "C:\\Users\\Kevin\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Kevin\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\Kevin\\.nuget\\packages\\mysqlconnector\\1.1.0\\mysqlconnector.1.1.0.nupkg.sha512",
+    "C:\\Users\\Kevin\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",
+    "C:\\Users\\Kevin\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
+    "C:\\Users\\Kevin\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\Kevin\\.nuget\\packages\\system.security.cryptography.protecteddata\\5.0.0\\system.security.cryptography.protecteddata.5.0.0.nupkg.sha512",
+    "C:\\Users\\Kevin\\.nuget\\packages\\system.security.permissions\\5.0.0\\system.security.permissions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Kevin\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
+    "C:\\Users\\Kevin\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

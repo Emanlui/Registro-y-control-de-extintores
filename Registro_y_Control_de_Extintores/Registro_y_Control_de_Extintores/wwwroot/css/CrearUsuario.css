@@ -7,17 +7,17 @@ body {
 }
 
 
-
 @media (min-width: 600px) {
     .contain {
         padding: 0;
     }
 }
 
-h3, h2, h1, label
-ul {
-    margin: 0;
-    font-family: Rufina
+
+h3, h2, h1, label, select, ul {
+    margin: 2;
+    font-family: Rufina;
+    padding: 2;
 }
 
 h3 {
@@ -108,6 +108,7 @@ div.columns {
 }
 
 button,
+.select,
 input,
 textarea {
     padding: 1em;

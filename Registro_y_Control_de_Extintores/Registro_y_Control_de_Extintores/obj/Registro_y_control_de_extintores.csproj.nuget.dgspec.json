@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kevin\\Desktop\\.Materias segundo semestre\\Proyecto\\Registro-y-control-de-extintores\\Registro_y_Control_de_Extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores.csproj": {}
+    "C:\\Users\\Kevin\\Desktop\\.Materias segundo semestre\\Proyecto\\Repo\\Registro_y_Control_de_Extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kevin\\Desktop\\.Materias segundo semestre\\Proyecto\\Registro-y-control-de-extintores\\Registro_y_Control_de_Extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores.csproj": {
+    "C:\\Users\\Kevin\\Desktop\\.Materias segundo semestre\\Proyecto\\Repo\\Registro_y_Control_de_Extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kevin\\Desktop\\.Materias segundo semestre\\Proyecto\\Registro-y-control-de-extintores\\Registro_y_Control_de_Extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores.csproj",
+        "projectUniqueName": "C:\\Users\\Kevin\\Desktop\\.Materias segundo semestre\\Proyecto\\Repo\\Registro_y_Control_de_Extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores.csproj",
         "projectName": "Registro_y_control_de_extintores",
-        "projectPath": "C:\\Users\\Kevin\\Desktop\\.Materias segundo semestre\\Proyecto\\Registro-y-control-de-extintores\\Registro_y_Control_de_Extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores.csproj",
+        "projectPath": "C:\\Users\\Kevin\\Desktop\\.Materias segundo semestre\\Proyecto\\Repo\\Registro_y_Control_de_Extintores\\Registro_y_control_de_extintores\\Registro_y_control_de_extintores.csproj",
         "packagesPath": "C:\\Users\\Kevin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kevin\\Desktop\\.Materias segundo semestre\\Proyecto\\Registro-y-control-de-extintores\\Registro_y_Control_de_Extintores\\Registro_y_control_de_extintores\\obj\\",
+        "outputPath": "C:\\Users\\Kevin\\Desktop\\.Materias segundo semestre\\Proyecto\\Repo\\Registro_y_Control_de_Extintores\\Registro_y_control_de_extintores\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kevin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,6 +43,10 @@
             "MySqlConnector": {
               "target": "Package",
               "version": "[1.1.0, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [

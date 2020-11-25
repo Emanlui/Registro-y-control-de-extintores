@@ -2,9 +2,9 @@
     ViewData["Title"] = "Crear Usuario";
 }
 <head>
-    <h1 style="text-align: center" ;>@ViewData["Title"]</h1>
+    <title style="text-align: center" ;>@ViewData["Title"]</title>
 
-    @model Registro_y_control_de_extintores.Controllers.MenuUsuarioController;
+    @model Registro_y_control_de_extintores.Models.CentrosTrabajoModelo;
    
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -28,15 +28,23 @@
                 </p>
                 <p>
                     <label for="">Contraseña</label>
-                    <input type="text">
+                    <input type="text" id="clave" name="clave">
                 </p>
+
+                <label for="">Correo Electrónico</label>
+                <input type="text" id="email" name="email">
+                    
+                <label for="administrador"> ¿Otorgar Permisos de Administrador? @Html.CheckBox("administrador") </label>
+
                 <p>
-                    <label for="">Correo Electrónico</label>
-                    <input type="text">
-                </p>
-                <p>
-                    <label for="">Centro de Trabajo</label>
-                    <input type="text">
+                    <label for="">Centro de Trabajo a Registrar</label>
+
+                    <select id="CentroTrabajoSeleccionado" name="CentroTrabajoSeleccionado">
+                        @foreach (var item in ViewBag.ListaCentros)
+                        {
+                            <option value="@item.id">@item.nombre</option>
+                        }
+                    </select>
                 </p>
                 <p>
                     <input type="submit" value="Registrar Usuario" formaction="@Url.Action("RegistrarUsuarioNuevo","MenuUsuario")" formmethod="get" class="btn btn-primary btn-lg btn-block" />
