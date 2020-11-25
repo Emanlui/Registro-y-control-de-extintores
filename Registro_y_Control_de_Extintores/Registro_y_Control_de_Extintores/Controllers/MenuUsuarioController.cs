@@ -227,9 +227,26 @@ namespace Registro_y_control_de_extintores.Controllers
             return View("MenuUsuario");
         }
 
-        public ActionResult EliminarUsuarioExistente()
+        public ActionResult EliminarUsuarioExistente(int CedulaUsuario)
         {
-            //espacio para logica de eliminar usuario existente
+            //Conexion a la base
+            //configuracion de mysql
+            Conexion mainconn = new Conexion();
+            MySqlCommand cmd = null;
+            MySqlDataReader reader = null;
+
+            //creacion de consulta mysql para buscar el centro de trabajo en la base de datos
+            string Query_Data = "DELETE FROM usuario WHERE cedula = " +CedulaUsuario;
+            cmd = new MySqlCommand(Query_Data, mainconn.con);
+            cmd.CommandType = CommandType.Text;
+
+            //abrir la conexion y realizar la consulta
+            mainconn.con.Open();
+            cmd.ExecuteNonQuery();
+
+            //cerrar la conexion
+            mainconn.con.Close();
+
             return View("MenuUsuario");
         }
     }
