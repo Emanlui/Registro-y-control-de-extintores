@@ -58,7 +58,7 @@ namespace Registro_y_control_de_extintores
 
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Soporte}/{action=Soporte}");
+                    pattern: "{controller=SoporteController}/{action=Soporte}");
             });
         }
     }
