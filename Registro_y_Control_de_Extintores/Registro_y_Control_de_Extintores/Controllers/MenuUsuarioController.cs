@@ -64,10 +64,45 @@ namespace Registro_y_control_de_extintores.Controllers
             return View("CrearUsuario", ctm);
         }
 
-        public ActionResult ModificarUsuarioMenu()
+        public ActionResult ModificarUsuarioMenu(CentrosTrabajoModelo ctm)
         {
-            //despliega el menu para modificar usuarios
-            return View("ModificarUsuario");
+            //configuracion de mysql
+            Conexion mainconn = new Conexion();
+            MySqlCommand cmd = null;
+            MySqlDataReader reader = null;
+
+            //creacion de consulta mysql
+            string Query_Data = "SELECT * FROM centro_de_trabajo";
+            cmd = new MySqlCommand(Query_Data, mainconn.con);
+            cmd.CommandType = CommandType.Text;
+
+            //ejecucion de la consulta y obtencion de datos
+            mainconn.con.Open();
+            reader = cmd.ExecuteReader();
+            List<CentrosTrabajoModelo> Data_Obtained = new List<CentrosTrabajoModelo>();
+
+            if (!reader.HasRows)
+            {
+                //error
+            }
+
+            DataTable dt = new DataTable();
+            //obtener los datos del sql y guardarlos en la lista temporal
+            while (reader.Read())
+            {
+                var details = new CentrosTrabajoModelo();
+                details.id = (int)reader["id"];
+                details.nombre = reader["nombre"].ToString();
+                Data_Obtained.Add(details);
+            }
+
+            //copiar la lista temporal a la lista del modelo
+            ctm.CentrosTrabajoInfo = Data_Obtained;
+            ViewBag.ListaCentros = ctm.CentrosTrabajoInfo;
+
+            //cerrar la conexion con la base
+            mainconn.con.Close();
+            return View("ModificarUsuario", ctm);
         }
 
         public ActionResult EliminarUsuarioMenu()
@@ -93,8 +128,6 @@ namespace Registro_y_control_de_extintores.Controllers
             mainconn.con.Open();
             reader = cmd.ExecuteReader();
             reader.Read();
-            Console.WriteLine("Valores obtenidos: " + reader["id"].ToString()+" "+reader["nombre"].ToString() + "\n");
-
 
             //procesar datos de la consulta
             CentrosTrabajoModelo CentroTrabajo = new CentrosTrabajoModelo();
@@ -140,8 +173,56 @@ namespace Registro_y_control_de_extintores.Controllers
             return View("MenuUsuario");
         }
 
-        public ActionResult ModificarUsuarioExistente()
+        public ActionResult ModificarUsuarioExistente(int CedulaUsuario, string NuevaClave, String NuevoCentroTrabajo)
         {
+            //Conexion a la base
+            //configuracion de mysql
+            Conexion mainconn = new Conexion();
+            MySqlCommand cmd = null;
+            MySqlDataReader reader = null;
+
+            //creacion de consulta mysql para buscar el centro de trabajo en la base de datos
+            string Query_Data = "SELECT * FROM centro_de_trabajo WHERE id = " + "'" + NuevoCentroTrabajo + "'";
+            cmd = new MySqlCommand(Query_Data, mainconn.con);
+            cmd.CommandType = CommandType.Text;
+
+            //abrir la conexion y realizar la consulta
+            mainconn.con.Open();
+            reader = cmd.ExecuteReader();
+            reader.Read();
+
+            //procesar datos de la consulta
+            CentrosTrabajoModelo CentroTrabajo = new CentrosTrabajoModelo();
+            if (!reader.HasRows)
+            {
+                //error-no existe el centro de trabajo
+            }
+            else
+            {
+                CentroTrabajo.id = (int)reader["id"];
+                CentroTrabajo.nombre = reader["nombre"].ToString();
+            }
+
+            //cerrar la conexion con la base
+            mainconn.con.Close();
+
+            /*
+                Una vez obtenido el centro de trabajo, actualizamos
+                los datos del usuario con los datos recibidos
+             */
+
+            //creacion de consulta mysql//creacion de consulta mysql
+            Query_Data = "UPDATE usuario SET " + "id_centro = " + CentroTrabajo.id + ", " + "password = '"+NuevaClave +"' WHERE cedula = "+CedulaUsuario;
+            cmd = new MySqlCommand(Query_Data, mainconn.con);
+            cmd.CommandType = CommandType.Text;
+
+            //ejecucion de la consulta y obtencion de datos
+            mainconn.con.Open();
+            cmd.ExecuteNonQuery();
+
+            //cerrar la conexion con la base
+            mainconn.con.Close();
+
             //espacio para logica de modificar usuario existente
             return View("MenuUsuario");
         }
