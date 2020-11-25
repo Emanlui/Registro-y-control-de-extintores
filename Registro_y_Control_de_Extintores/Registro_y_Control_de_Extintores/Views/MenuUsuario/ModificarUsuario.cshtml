@@ -4,7 +4,7 @@
 <head>
     <h1 style="text-align: center" ;>@ViewData["Title"]</h1>
 
-    @model Registro_y_control_de_extintores.Controllers.MenuUsuarioController;
+    @model Registro_y_control_de_extintores.Models.CentrosTrabajoModelo;
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -22,16 +22,22 @@
         <form asp-action="ModificarUsuarioExistente" asp-controller="MenuUsuarioController" method="get">
             <div class="columns">
                 <p>
-                    <label for="">Cédula</label>
+                    <label for="">Cédula del usuario a modificar</label>
                     <input type="text" id="CedulaUsuario" name="CedulaUsuario">
                 </p>
                 <p>
-                    <label for="">Contraseña</label>
-                    <input type="text">
+                    <label for="">Nueva Contraseña para el usuario</label>
+                    <input type="text" id="NuevaClave" name="NuevaClave">
                 </p>
                 <p>
-                    <label for="">Centro de Trabajo</label>
-                    <input type="text">
+                    <label for="">Nuevo Centro de Trabajo a Registrar</label>
+
+                    <select id="NuevoCentroTrabajo" name="NuevoCentroTrabajo">
+                        @foreach (var item in ViewBag.ListaCentros)
+                        {
+                            <option value="@item.id">@item.nombre</option>
+                        }
+                    </select>
                 </p>
                 <p>
                     <input type="submit" value="Modificar Usuario" formaction="@Url.Action("ModificarUsuarioExistente","MenuUsuario")" formmethod="get" class="btn btn-primary btn-lg btn-block" />
