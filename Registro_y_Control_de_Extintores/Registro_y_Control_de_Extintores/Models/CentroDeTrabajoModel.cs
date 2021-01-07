@@ -13,5 +13,9 @@ namespace Registro_y_control_de_extintores.Models
         [Required]
         [StringLength(50)]
         public string Nombre{ get; set; }
+
+        [Required]
+        public Boolean Habilitado { get; set; }
+
     }
 }

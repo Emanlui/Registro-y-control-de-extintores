@@ -10,13 +10,9 @@ namespace Registro_y_control_de_extintores.Controllers
     public class CentroController : Controller
     {
         
-        CrudUsuario crud = new CrudUsuario();
+        CrudCentro crud = new CrudCentro();
         CentroDeTrabajoModel ctm = new CentroDeTrabajoModel();
 
-        public string prueba()
-        {
-            return "Hola, esta es una prueba" + User.Identity.Name;
-        }
         public IActionResult Administrar()
         {
             return View();
@@ -29,15 +25,15 @@ namespace Registro_y_control_de_extintores.Controllers
             if (!String.IsNullOrEmpty(nombre))
             {
                 //TODO: Save the data in database  
-
-                ctm.Nombre = nombre;
-                crud.centro = ctm;
-                crud.Crear_Centro();
-
-                return RedirectToAction("index", "Home");
+                
+                if(crud.Crear_Centro(nombre) == 0) return RedirectToAction("index", "Home");
+                else
+                {
+                    return RedirectToAction("administrar", "Centro");
+                }
+                
             }
 
-            
             else
                 return RedirectToAction("index", "Home");
         }
@@ -48,9 +44,7 @@ namespace Registro_y_control_de_extintores.Controllers
             if (!String.IsNullOrEmpty(nombre))
             {
                 //TODO: Save the data in database  
-                ctm.Nombre = nombre;
-                crud.centro = ctm;
-                crud.Eliminar_Centro();
+                crud.Eliminar_Centro(nombre);
                 return RedirectToAction("index", "Home");
             }
             else
