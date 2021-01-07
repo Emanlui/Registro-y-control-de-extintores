@@ -11,13 +11,7 @@ namespace Registro_y_control_de_extintores.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
+        
         public IActionResult Index()
         {
             return View();
@@ -25,6 +19,7 @@ namespace Registro_y_control_de_extintores.Controllers
 
         public IActionResult Privacy()
         {
+            ViewBag.Message = "Hola";
             return View();
         }
 
