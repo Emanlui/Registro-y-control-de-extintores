@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using Registro_y_control_de_extintores.Models;
 
 namespace Registro_y_control_de_extintores.Controllers
@@ -20,6 +22,8 @@ namespace Registro_y_control_de_extintores.Controllers
 
         public IActionResult Index()
         {
+            var userInfo = new Inicio_de_sesion() { Id = 1};
+            HttpContext.Session.SetString("SessionUser", JsonConvert.SerializeObject(userInfo));
             return View();
         }
 
