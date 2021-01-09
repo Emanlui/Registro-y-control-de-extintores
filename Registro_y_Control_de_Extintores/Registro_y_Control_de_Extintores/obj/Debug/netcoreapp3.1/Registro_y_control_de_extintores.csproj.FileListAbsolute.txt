@@ -125,3 +125,7 @@ C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Cont
 C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\scopedcss\bundle\Registro_y_control_de_extintores.styles.css
 C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\Centro\Administrar.cshtml.g.cs
+C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\MenuUsuario\CrearUsuario.cshtml.g.cs
+C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\MenuUsuario\EliminarUsuario.cshtml.g.cs
+C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\MenuUsuario\MenuUsuario.cshtml.g.cs
+C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\MenuUsuario\ModificarUsuario.cshtml.g.cs
