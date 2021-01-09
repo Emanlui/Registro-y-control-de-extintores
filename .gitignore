@@ -8,4 +8,5 @@
 .cache
 .exe
 .pdb
-Debug/
+.suo
+.config
