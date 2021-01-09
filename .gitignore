@@ -12,5 +12,5 @@
 *.config
 
 #Directorios
-vs/
+.vs/
 Debug/
