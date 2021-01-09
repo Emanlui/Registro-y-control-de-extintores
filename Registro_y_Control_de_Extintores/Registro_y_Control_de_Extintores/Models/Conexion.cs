@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using MySqlConnector;
 
 namespace Registro_y_control_de_extintores.Models
 {
@@ -20,9 +21,6 @@ namespace Registro_y_control_de_extintores.Models
             string conexion_a_la_base = "server="+host+";userid="+user+";password=;database="+ db;
             con = new MySqlConnection(conexion_a_la_base);
 
-
         }
     }
-
-   
 }

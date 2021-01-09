@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
@@ -6,4 +7,14 @@
       "C:\\Microsoft\\Xamarin\\NuGet"
     ]
   }
+=======
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\faoal\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\faoal\\.nuget\\packages",
+      "C:\\Microsoft\\Xamarin\\NuGet"
+    ]
+  }
+>>>>>>> 1-iteracin1-semana1login_logout
 }
