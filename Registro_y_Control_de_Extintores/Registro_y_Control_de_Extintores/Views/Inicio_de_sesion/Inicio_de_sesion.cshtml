@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{ ViewData["Title"] = "Inicio de Sesión"; }
+<head>
+<h1 style="text-align: center" ;>@ViewData["Title"]</h1>
+
+@model Registro_y_control_de_extintores.Controllers.Inicio_de_sesionController
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown" style="margin: auto; width: 70%; border: 6px solid blue; padding: 100px;">
+    <div id="formContent">
+
+        <form asp-action="Autenticar_usuario" asp-controller="Inicio_de_sesion" method="GET">
+            <fieldset>
+                <div class="form-group" align="center">
+                    <label style="font-size:30px">Ingrese su correo o cédula</label>
+                    <br>
+                    <input type="text" id="uname" name="uname">
+                </div>
+                <br>
+                <div class="form-group" align="center">
+                    <label style="font-size:30px">Ingrese su contraseña</label>
+                    <br>
+                    <input type="password" id="psw" name="psw">
+                </div>
+                <br>
+                <div class="form-group" align="center">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                </div>
+            </fieldset>
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div class="form-group" align="right">
+            <a class="underlineHover" href="olvide_contrasena">Olvidé mi contraseña</a>
+        </div>
+
+    </div>
+</div>

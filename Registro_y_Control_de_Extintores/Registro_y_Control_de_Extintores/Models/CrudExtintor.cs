@@ -1,9 +1,10 @@
-using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using MySqlConnector;
+
 
 namespace Registro_y_control_de_extintores.Models
 {
