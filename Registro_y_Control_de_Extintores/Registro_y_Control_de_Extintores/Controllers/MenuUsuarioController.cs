@@ -236,7 +236,7 @@ namespace Registro_y_control_de_extintores.Controllers
             MySqlDataReader reader = null;
 
             //creacion de consulta mysql para buscar el centro de trabajo en la base de datos
-            string Query_Data = "DELETE FROM usuario WHERE cedula = " +CedulaUsuario;
+            string Query_Data = "UPDATE usuario SET habilitado = 0 WHERE cedula =" +CedulaUsuario;
             cmd = new MySqlCommand(Query_Data, mainconn.con);
             cmd.CommandType = CommandType.Text;
 
