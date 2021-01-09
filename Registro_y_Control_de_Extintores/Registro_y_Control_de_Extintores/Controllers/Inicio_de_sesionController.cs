@@ -5,7 +5,6 @@ using System;
 using System.Data;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http;
-using Xceed.Wpf.Toolkit;
 
 namespace Registro_y_control_de_extintores.Controllers
 {
@@ -48,8 +47,9 @@ namespace Registro_y_control_de_extintores.Controllers
             
             try
             {
-                string sql = "select * from usuario where " + tipo + " = @correo;";
-                cmd = new MySqlCommand(sql, con.con);
+                cmd = new MySqlCommand();
+                cmd.CommandText = "select * from usuario where " + tipo + " = @correo;";
+                cmd.Connection = con.con;
                 cmd.Parameters.Add("@correo", MySqlDbType.VarChar).Value = uname;
                 cmd.CommandType = CommandType.Text;
 
