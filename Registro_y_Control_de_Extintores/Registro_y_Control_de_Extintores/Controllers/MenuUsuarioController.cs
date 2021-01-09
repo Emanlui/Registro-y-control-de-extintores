@@ -10,7 +10,8 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Web;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
+
 
 namespace Registro_y_control_de_extintores.Controllers
 {
