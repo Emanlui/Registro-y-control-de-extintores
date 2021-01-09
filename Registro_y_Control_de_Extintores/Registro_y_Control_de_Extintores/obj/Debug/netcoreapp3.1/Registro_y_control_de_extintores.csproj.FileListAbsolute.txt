@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\Registro_y_control_de_extintores.exe
@@ -129,10 +130,13 @@ C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Cont
 C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\MenuUsuario\EliminarUsuario.cshtml.g.cs
 C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\MenuUsuario\MenuUsuario.cshtml.g.cs
 C:\Users\emanu\Desktop\Trabajos\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\MenuUsuario\ModificarUsuario.cshtml.g.cs
+=======
+>>>>>>> 4-iteracin1-semana2crear_y_eliminar_exti
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\Registro_y_control_de_extintores.exe
+<<<<<<< HEAD
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\Registro_y_control_de_extintores.deps.json
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\Registro_y_control_de_extintores.runtimeconfig.json
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\Registro_y_control_de_extintores.runtimeconfig.dev.json
@@ -140,6 +144,8 @@ C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Cont
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\Registro_y_control_de_extintores.pdb
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\Registro_y_control_de_extintores.Views.dll
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\Registro_y_control_de_extintores.Views.pdb
+=======
+>>>>>>> 4-iteracin1-semana2crear_y_eliminar_exti
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.csprojAssemblyReference.cache
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.AssemblyInfoInputs.cache
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.AssemblyInfo.cs
@@ -150,7 +156,10 @@ C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Cont
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.RazorCoreGenerate.cache
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+<<<<<<< HEAD
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\Inicio_de_sesion\Inicio_de_sesion.cshtml.g.cs
+=======
+>>>>>>> 4-iteracin1-semana2crear_y_eliminar_exti
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -158,6 +167,7 @@ C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Cont
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.RazorTargetAssemblyInfo.cache
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.RazorTargetAssemblyInfo.cs
+<<<<<<< HEAD
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.Views.pdb
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\staticwebassets\Registro_y_control_de_extintores.StaticWebAssets.Manifest.cache
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\staticwebassets\Registro_y_control_de_extintores.StaticWebAssets.xml
@@ -257,6 +267,17 @@ C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Cont
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.csproj.CoreCompileInputs.cache
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.MvcApplicationPartsAssemblyInfo.cache
+=======
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\staticwebassets\Registro_y_control_de_extintores.StaticWebAssets.Manifest.cache
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\staticwebassets\Registro_y_control_de_extintores.StaticWebAssets.xml
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\Registro_y_control_de_extintores.deps.json
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\Registro_y_control_de_extintores.runtimeconfig.json
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\Registro_y_control_de_extintores.runtimeconfig.dev.json
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\Registro_y_control_de_extintores.dll
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\Registro_y_control_de_extintores.pdb
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\Registro_y_control_de_extintores.Views.dll
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\Registro_y_control_de_extintores.Views.pdb
+>>>>>>> 4-iteracin1-semana2crear_y_eliminar_exti
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
@@ -271,6 +292,7 @@ C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Cont
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+<<<<<<< HEAD
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\AboutUs\AboutUs.cshtml.g.cs
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\Centro\Administrar.cshtml.g.cs
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\Soporte\Soporte.cshtml.g.cs
@@ -278,3 +300,14 @@ C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Cont
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\MenuUsuario\EliminarUsuario.cshtml.g.cs
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\MenuUsuario\MenuUsuario.cshtml.g.cs
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\MenuUsuario\ModificarUsuario.cshtml.g.cs
+=======
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.csproj.CoreCompileInputs.cache
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.Views.pdb
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.csproj.CopyComplete
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.dll
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.pdb
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.genruntimeconfig.cache
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\Extintor\Eliminar.cshtml.g.cs
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\Extintor\Crear.cshtml.g.cs
+>>>>>>> 4-iteracin1-semana2crear_y_eliminar_exti

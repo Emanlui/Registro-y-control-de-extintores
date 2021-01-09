@@ -77,6 +77,18 @@ namespace Registro_y_control_de_extintores
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Inicio_de_sesionController}/{action=Inicio_de_sesion}");
+
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Extintor}/{action=Index}");
+
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Extintor}/{action=Eliminar}");
+
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Extintor}/{action=Crear}");
             });
         }
     }

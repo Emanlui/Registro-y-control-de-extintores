@@ -11,6 +11,7 @@ namespace Registro_y_control_de_extintores.Models
     {
         public MySqlConnection con;
         public CentroDeTrabajoModel centro { set; get; }
+        public ExtintorModel extintor { set; get; }
 
         public Conexion()
         {
