@@ -24,6 +24,10 @@ namespace Registro_y_control_de_extintores
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddSession(option =>
+            {
+                option.IdleTimeout = TimeSpan.FromMinutes(15);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +49,7 @@ namespace Registro_y_control_de_extintores
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
@@ -68,6 +73,10 @@ namespace Registro_y_control_de_extintores
                     name: "default",
                     pattern: "{controller=MenuUsuario}/{action=MenuPrincipalUsuarios}");
 
+
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Inicio_de_sesionController}/{action=Inicio_de_sesion}");
             });
         }
     }
