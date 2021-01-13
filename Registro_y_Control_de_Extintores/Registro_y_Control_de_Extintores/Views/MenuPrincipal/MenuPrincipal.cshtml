@@ -2,79 +2,98 @@
     ViewData["Title"] = "Menu Principal";
 }
 <head>
-    <h1 style="text-align: center" ;>@ViewData["Title"]</h1>
+    <h1 style="text-align: right" ;>@ViewData["Title"]</h1>
 
     @model Registro_y_control_de_extintores.Controllers.MenuPrincipalController;
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="~/css/site.css" type="text/css">
+    <link rel="stylesheet" href="css/site.css">
 </head>
 
 <!------ Include the above in your HEAD tag ---------->
-<div class="wrapper fadeInDown" style="        margin: auto;
-        height: auto;
-        width: 100%;
-        border: 6px solid blue;
-        padding: 3px;
-        position: relative">
+<div style="float:left;">
+    <table id="MenuLateral" style="width:30%; height:100%">
+        <tr>
+            <!--AdministrarUsuarios button -->
+            <input type="submit" value="Administrar Usuario" formaction="@Url.Action("accion","controller")" formmethod="get" class="btn btn-primary btn-lg btn-block" />
+        </tr>
+        <tr>
+            <!--AdministrarExintores button -->
+            <input type="submit" value="Administrar Extintores" formaction="@Url.Action("accion","controller")" formmethod="get" class="btn btn-primary btn-lg btn-block" />
+        </tr>
+        <tr>
+            <!--AdministrarCentrosDeTrabajo button -->
+            <input type="submit" value="Administrar Centros de Trabajo" formaction="@Url.Action("accion","controller")" formmethod="get" class="btn btn-primary btn-lg btn-block" />
+        </tr>
+        <tr>
+            <!--DescargarDatos button -->
+            <input type="submit" value="Descargar datos" formaction="@Url.Action("accion","controller")" formmethod="get" class="btn btn-primary btn-lg btn-block" />
+        </tr>
+    </table>
+</div>
+
+<div style="border: 6px solid blue; padding: 3px; float:left; height:inherit; max-width:70%; height:30%;">
+
     <div id="formContent">
 
         <!--Code to create the buttons submenu-->
-        <form  asp-controller="MenuPrincipalController">
+        <form asp-controller="MenuPrincipalController">
+
             <fieldset>
-                <div style="overflow:auto; position:relative; ">
-                    
-                    <!--Table for adding the fire extinguisher values -->                   
-                    <table border="1" cellspacing="3" cellpadding="3" colspan="3" style="align-content:center; height:inherit; width:inherit; max-height:80%">
-
-                        <!--first row, headers-->
-                        <tr>
-                            <th>Id Centro</th>
-                            <th>Activo</th>
-                            <th>Ubicación Geografica</th>
-                            <th>Ubicación</th>
-                            <th>Agente Extintor</th>
-                            <th>Tipo</th>
-                            <th>Capacidad</th>
-                            <th>Última Prueba Hidroestática</th>
-                            <th>Próxima Prueba Hidroestática</th>
-                            <th>Próximo Mantenimiento</th>
-                            <th>Presión</th>
-                            <th>Rotulación</th>
-                            <th>Acceso a Extintor</th>
-                            <th>Condicion Extintor</th>
-                            <th>Seguro y Marchamo</th>
-                            <th>Collarin</th>
-                            <th>Condicion Manguera</th>
-                            <th>Condicion Boquilla</th>
-                        </tr>
-
-                        <!--iteration to fill the table with the data-->
-                        @foreach (var item in ViewBag.ListaExtintores)
-                        {
+                <div>
+                    <!--Table for adding the fire extinguisher values -->
+                    <table class="table_fixed" style="width: inherit; height:200px;" border="1" cellspacing="3" cellpadding="3" colspan="3">
+                        <tbody style="display: block; overflow:visible">
+                            <!--first row, headers-->
                             <tr>
-                                <td>@item.Id_centro </td>
-                                <td>@item.Activo </td>
-                                <td>@item.Tipo</td>
-                                <td>@item.Ubicacion_geografica</td>
-                                <td>@item.Ubicacion</td>
-                                <td>@item.Agente_extintor</td>
-                                <td>@item.Capacidad</td>
-                                <td>@item.Ultima_prueba_hidrostatica</td>
-                                <td>@item.Proxima_prueba_hidrostatica</td>
-                                <td>@item.Proximo_mantenimiento</td>
-                                <td>@item.Presion</td>
-                                <td>@item.Rotulacion</td>
-                                <td>@item.Acceso_a_extintor</td>
-                                <td>@item.Condicion_extintor</td>
-                                <td>@item.Seguro_y_marchamo</td>
-                                <td>@item.Collarin</td>
-                                <td>@item.Condicion_manguera</td>
-                                <td>@item.Condicion_boquilla</td>
+                                <th>Id Centro</th>
+                                <th>Activo</th>
+                                <th>Ubicación Geografica</th>
+                                <th>Ubicación</th>
+                                <th>Agente Extintor</th>
+                                <th>Tipo</th>
+                                <th>Capacidad</th>
+                                <th>Última Prueba Hidroestática</th>
+                                <th>Próxima Prueba Hidroestática</th>
+                                <th>Próximo Mantenimiento</th>
+                                <th>Presión</th>
+                                <th>Rotulación</th>
+                                <th>Acceso a Extintor</th>
+                                <th>Condicion Extintor</th>
+                                <th>Seguro y Marchamo</th>
+                                <th>Collarin</th>
+                                <th>Condicion Manguera</th>
+                                <th>Condicion Boquilla</th>
                             </tr>
-                        }
+
+                            <!--iteration to fill the table with the data-->
+                            @foreach (var item in ViewBag.ListaExtintores)
+                            {
+                                <tr>
+                                    <td>@item.Id_centro </td>
+                                    <td>@item.Activo </td>
+                                    <td>@item.Tipo</td>
+                                    <td>@item.Ubicacion_geografica</td>
+                                    <td>@item.Ubicacion</td>
+                                    <td>@item.Agente_extintor</td>
+                                    <td>@item.Capacidad</td>
+                                    <td>@item.Ultima_prueba_hidrostatica</td>
+                                    <td>@item.Proxima_prueba_hidrostatica</td>
+                                    <td>@item.Proximo_mantenimiento</td>
+                                    <td>@item.Presion</td>
+                                    <td>@item.Rotulacion</td>
+                                    <td>@item.Acceso_a_extintor</td>
+                                    <td>@item.Condicion_extintor</td>
+                                    <td>@item.Seguro_y_marchamo</td>
+                                    <td>@item.Collarin</td>
+                                    <td>@item.Condicion_manguera</td>
+                                    <td>@item.Condicion_boquilla</td>
+                                </tr>
+                            }                            
+                        </tbody>
                     </table>
                 </div>
             </fieldset>
