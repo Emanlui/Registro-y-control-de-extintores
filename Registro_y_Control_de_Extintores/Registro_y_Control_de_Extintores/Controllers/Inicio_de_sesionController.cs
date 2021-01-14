@@ -24,6 +24,48 @@ namespace Registro_y_control_de_extintores.Controllers
         }
 
         [HttpGet]
+        public IActionResult OlvidarContrasena()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CambiarContrasena(string username, string password)
+        {
+            Conexion conexion = new Conexion();
+            conexion.con.Open();
+            string tipo = null;
+
+            if (username.Contains("@"))
+            {
+                tipo = "correo";
+            }
+            else
+            {
+
+                tipo = "cedula";
+            }
+
+            using (MySqlCommand cmd = new MySqlCommand())
+            {
+              
+                cmd.CommandText = "UPDATE usuario SET password = @pwd WHERE " + tipo + " = @uname";
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = conexion.con;
+
+                cmd.Parameters.Add("@pwd", MySqlDbType.VarChar).Value = password;
+                cmd.Parameters.Add("@uname", MySqlDbType.VarChar).Value = username;
+
+                cmd.ExecuteNonQuery();
+                conexion.con.Close();
+            }
+
+
+            return RedirectToAction("index", "Home");
+            
+        }
+
+        [HttpGet]
         public string Autenticar_usuario(string uname, string psw)
         {
 
