@@ -33,7 +33,7 @@
     </table>
 </div>
 
-<div style="border: 6px solid blue; padding: 3px; float:left; height:inherit; max-width:70%; height:30%;">
+<div style="border: 6px solid blue; padding: 3px; float:left; width:70%; height:30%; overflow:scroll">
 
     <div id="formContent">
 
@@ -41,9 +41,9 @@
         <form asp-controller="MenuPrincipalController">
 
             <fieldset>
-                <div style="display:block">
+                <div>
                     <!--Table for adding the fire extinguisher values -->
-                    <table id="tabla_extintores" style="width:70%; overflow:visible;"  border="1" cellspacing="3" cellpadding="3" colspan="3">
+                    <table id="tabla_extintores" style="width:max-content; overflow:visible;"  border="1" cellspacing="3" cellpadding="3" colspan="3">
                         <!--first row, headers-->
                         <tr>
                             <th></th> <!--Edit button column space-->
