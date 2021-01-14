@@ -9,33 +9,20 @@
     <link rel="stylesheet" href="~/css/StyleSheet.css"  />
 </head>
 <body>
-    <header>
-        <nav style="background-color: rgb(17, 45, 85);">
-            <div class="row div-registro">
 
-                <a  asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="~/images/header-image.jpg" alt="Página principal" style="max-width:972px; max-height:124px "></a>
-                <a asp-area="" asp-controller="Logout" asp-action="Logout" style="color: white; margin-left:500px;"><h2>Salir</h2></a>
-            </div>
-        </nav>
-    </header>
-    <div class="container" style=" padding-bottom: 90px; ">
+    @Html.Partial("_Header");
+
+    <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer style="background-color: rgb(17, 45, 85); position: absolute;width:100%;bottom:0;">
-            <div class="row div-registro">
-                <img src="~/images/footer-image.jpg" alt="Página principal"  style="max-width:972px; max-height:110px ">
-                <a asp-area="" asp-controller="Soporte" asp-action="Soporte" style="color: white; margin-left:500px;"><h4>Soporte</h4></a>
-                <a asp-area="" asp-controller="AboutUs" asp-action="AboutUs" style="color: white; margin-left:20px;"><h4>About Us</h4></a>
-            </div>
-    </footer>
+    @Html.Partial("_Footer");
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
-
 </html>
