@@ -3,7 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
-
+  
+  <ItemGroup>
+    <None Include="wwwroot\css\CrearUsuario.css" />
+  </ItemGroup>
+  
   <ItemGroup>
     <None Include="wwwroot\css\StyleSheet.css" />
   </ItemGroup>
@@ -15,6 +19,16 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="MySqlConnector" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.22" />
   </ItemGroup>
 
 </Project>
