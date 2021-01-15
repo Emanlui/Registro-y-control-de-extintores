@@ -46,5 +46,43 @@ namespace Registro_y_control_de_extintores.Models
 
             }
         }
+
+        public List<CentroDeTrabajoModel> ObtenerDatosDeCentros() {
+
+            //configuracion de mysql
+            Conexion mainconn = new Conexion();
+            MySqlCommand cmd = null;
+            MySqlDataReader reader = null;
+
+            //creacion de consulta mysql
+            string Query_Data = "SELECT * FROM centro_de_trabajo";
+            cmd = new MySqlCommand(Query_Data, mainconn.con);
+            cmd.CommandType = CommandType.Text;
+
+            //ejecucion de la consulta y obtencion de datos
+            mainconn.con.Open();
+            reader = cmd.ExecuteReader();
+            List<CentroDeTrabajoModel> Data_Obtained = new List<CentroDeTrabajoModel>();
+
+            if (!reader.HasRows)
+            {
+                //error
+            }
+
+            DataTable dt = new DataTable();
+            //obtener los datos del sql y guardarlos en la lista temporal
+            while (reader.Read())
+            {
+                var details = new CentroDeTrabajoModel();
+                details.Id = (int)reader["id"];
+                details.Nombre = reader["nombre"].ToString();
+                Data_Obtained.Add(details);
+            }
+
+            //cerrar la conexion con la base
+            mainconn.con.Close();
+
+            return Data_Obtained;
+        }
     }
 }
