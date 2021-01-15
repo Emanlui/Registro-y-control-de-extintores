@@ -55,7 +55,7 @@ namespace Registro_y_control_de_extintores.Models
             MySqlDataReader reader = null;
 
             //creacion de consulta mysql
-            string Query_Data = "SELECT * FROM centro_de_trabajo";
+            string Query_Data = "SELECT * FROM centro_de_trabajo where habilitado = 1";
             cmd = new MySqlCommand(Query_Data, mainconn.con);
             cmd.CommandType = CommandType.Text;
 
