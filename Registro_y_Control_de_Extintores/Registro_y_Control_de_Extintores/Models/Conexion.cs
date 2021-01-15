@@ -11,15 +11,16 @@ namespace Registro_y_control_de_extintores.Models
     {
         public MySqlConnection con;
         public CentroDeTrabajoModel centro { set; get; }
+        public ExtintorModel extintor { set; get; }
 
         public Conexion()
         {
-            string host = "localhost";
-            string db = "registro_y_control_de_extintores";
-            string user = "root";
-            string conexion_a_la_base = "server="+host+";userid="+user+";password=;database="+ db;
-            con = new MySqlConnection(conexion_a_la_base);
+            string host = "sql5.freemysqlhosting.net";
+            string db = "sql5387073";
+            string user = "sql5387073";
+            string conexion_a_la_base = "server=" + host + ";userid=" + user + ";password=1ppt4rpjYR;database=" + db;
 
+            con = new MySqlConnection(conexion_a_la_base);
         }
     }
 }

@@ -37,8 +37,13 @@
                     <h5 style="font-weight:normal;">Nombre del centro de trabajo: </h5>
                 </div>
                 <div class="col">
-                    <input id="valor" class="form-control" />
-                    <br>
+                    <select id="valor" name="valor" asp-for="Nombre">
+                        @foreach (var item in ViewBag.ListaCentros)
+                        {
+                            <option value="@item.Nombre">@item.Nombre</option>
+                        }
+                    </select>
+                    <br><br>
                     <input id="btnModal" style="max-width:30%;" type="submit" value="Eliminar" class="btn btn-primary btn-lg btn-block" />
                 </div>
             </div>
