@@ -19,6 +19,8 @@ namespace Registro_y_control_de_extintores.Controllers
         }
         public IActionResult Administrar()
         {
+            List<CentroDeTrabajoModel> centrosDeTrabajo = crud.ObtenerDatosDeCentros();
+            ViewBag.ListaCentros = centrosDeTrabajo;
             return View();
         }
 
