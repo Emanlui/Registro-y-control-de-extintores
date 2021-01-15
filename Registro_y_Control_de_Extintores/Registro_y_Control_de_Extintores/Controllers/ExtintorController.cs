@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using MySqlConnector;
 using Registro_y_control_de_extintores.Models;
 
 namespace Registro_y_control_de_extintores.Controllers
@@ -24,6 +26,41 @@ namespace Registro_y_control_de_extintores.Controllers
 
         public IActionResult Crear()
         {
+            //configuracion de mysql
+            Conexion mainconn = new Conexion();
+            MySqlCommand cmd = null;
+            MySqlDataReader reader = null;
+
+            //creacion de consulta mysql
+            string Query_Data = "SELECT * FROM centro_de_trabajo";
+            cmd = new MySqlCommand(Query_Data, mainconn.con);
+            cmd.CommandType = CommandType.Text;
+
+            //ejecucion de la consulta y obtencion de datos
+            mainconn.con.Open();
+            reader = cmd.ExecuteReader();
+            List<CentroDeTrabajoModel> Data_Obtained = new List<CentroDeTrabajoModel>();
+
+            if (!reader.HasRows)
+            {
+                //error
+            }
+
+            DataTable dt = new DataTable();
+            //obtener los datos del sql y guardarlos en la lista temporal
+            while (reader.Read())
+            {
+                var details = new CentroDeTrabajoModel();
+                details.Id = (int)reader["id"];
+                details.Nombre = reader["nombre"].ToString();
+                Data_Obtained.Add(details);
+            }
+
+            ViewBag.ListaCentros = Data_Obtained;
+
+            //cerrar la conexion con la base
+            mainconn.con.Close();
+
             return View();
         }
 
@@ -72,8 +109,6 @@ namespace Registro_y_control_de_extintores.Controllers
                 ExtintorModel.Condicion_boquilla = condicion_boquilla;
                 crud.extintor = ExtintorModel;
                 crud.Crear_Extintor();
-                //Console.WriteLine(ultima_prueba_hidrostatica);
-                //Console.WriteLine(acceso_a_extintor);
                 return RedirectToAction("index", "Home");
             }
 
