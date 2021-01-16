@@ -12,7 +12,12 @@
             <div class="row">
                 <div class="col">
                     <h5 style="font-weight:normal;">Id centro</h5>
-                    <input id="id_centro" type="number" asp-for="Id_centro" class="form-control" />
+                    <select id="id_centro" name="id_centro" asp-for="Id_centro">
+                        @foreach (var item in ViewBag.ListaCentros)
+                        {
+                            <option value="@item.Id">@item.Nombre</option>
+                        }
+                    </select>
                 </div>
                 <div class="col">
                     <h5 style="font-weight:normal;">Activo</h5>
@@ -40,16 +45,11 @@
                     <h5 style="font-weight:normal;">Capacidad</h5>
                     <div class="row">
                         <div class="col">
-                            <label>5 libras</label>
-                            <br>
-                            <label>10 libras</label>
-                            <br>
-                            <label>15 libras</label>
-                        </div>
-                        <div class="col">
-                            <input id="capacidad_5" name="capacidad" value="5" type="radio" asp-for="Capacidad" class="form-control" />
-                            <input id="capacidad_10" name="capacidad" value="10" type="radio" asp-for="Capacidad" class="form-control" />
-                            <input id="capacidad_15" name="capacidad" value="15" type="radio" asp-for="Capacidad" class="form-control" />
+                            <select name="capacidad" id="capacidad">
+                                <option id="capacidad_5" name="capacidad" value="5" type="radio" asp-for="Capacidad" class="form-control">5 libras</option>
+                                <option id="capacidad_10" name="capacidad" value="10" type="radio" asp-for="Capacidad" class="form-control">10 libras</option>
+                                <option id="capacidad_15" name="capacidad" value="15" type="radio" asp-for="Capacidad" class="form-control">15 libras</option>
+                            </select>
                         </div>
                     </div>
                 </div>
