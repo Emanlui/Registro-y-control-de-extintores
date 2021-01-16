@@ -43,7 +43,7 @@
             <fieldset>
                 <div>
                     <!--Table for adding the fire extinguisher values -->
-                    <table id="tabla_extintores" style="width:max-content; overflow:visible;"  border="1" cellspacing="3" cellpadding="3" colspan="3">
+                    <table id="tabla_extintores" style="width:max-content; overflow:visible;" border="1" cellspacing="3" cellpadding="3" colspan="3">
                         <!--first row, headers-->
                         <tr>
                             <th></th> <!--Edit button column space-->
@@ -74,7 +74,9 @@
                             <tr>
                                 <td><input type="submit" value="Editar" formaction="@Url.Action("accion","controller")" formmethod="get" class="btn btn-primary btn-lg btn-block" /></td>
                                 <td><input type="submit" value="Imagen" formaction="@Url.Action("accion","controller")" formmethod="get" class="btn btn-primary btn-lg btn-block" /></td>
-                                <td value="@item.Id_centro">ViewBag.CentroExtintorTabla </td>
+                                <td value="@item.Id_centro">@ViewBag.ListaCentrosExtintores[0]</td>
+
+                        <!--Separar los fors aquí-->
                                 <td>@item.Activo </td>
                                 <td>@item.Ubicacion_geografica</td>
                                 <td>@item.Ubicacion</td>
@@ -157,9 +159,9 @@
                                     <td value=1>Mal estado</td>
                                 }
 
-                     
+
                             </tr>
-                        }                            
+                        }
 
                     </table>
                 </div>
