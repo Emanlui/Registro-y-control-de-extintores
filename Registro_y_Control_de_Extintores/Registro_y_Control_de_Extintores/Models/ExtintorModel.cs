@@ -45,5 +45,7 @@ namespace Registro_y_control_de_extintores.Models
         public int Condicion_manguera { get; set; }
 
         public int Condicion_boquilla { get; set; }
+
+        public List<ExtintorModel> ExtintoresInfo { get; set; }
     }
 }
