@@ -22,8 +22,6 @@ namespace Registro_y_control_de_extintores.Controllers
 
         public IActionResult Index()
         {
-            var userInfo = new Inicio_de_sesion() { Id = 1};
-            HttpContext.Session.SetString("SessionUser", JsonConvert.SerializeObject(userInfo));
             return View();
         }
 
