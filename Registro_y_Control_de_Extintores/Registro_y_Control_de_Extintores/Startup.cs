@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,8 +25,10 @@ namespace Registro_y_control_de_extintores
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddSession(option =>
-            {
+            services.AddMemoryCache();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSession(option =>
+            {
                 option.IdleTimeout = TimeSpan.FromMinutes(15);
             });
         }
@@ -43,6 +46,8 @@ namespace Registro_y_control_de_extintores
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            app.UseStatusCodePages();
+            app.UseStaticFiles();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -55,7 +60,7 @@ namespace Registro_y_control_de_extintores
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Inicio_de_sesion}/{action=Inicio_de_sesion}");
 
                 endpoints.MapControllerRoute(
                     name: "default",
@@ -75,10 +80,6 @@ namespace Registro_y_control_de_extintores
 
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Inicio_de_sesionController}/{action=Inicio_de_sesion}");
-
-                endpoints.MapControllerRoute(
-                    name: "default",
                     pattern: "{controller=Extintor}/{action=Index}");
 
                 endpoints.MapControllerRoute(
@@ -91,7 +92,7 @@ namespace Registro_y_control_de_extintores
 
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Inicio_de_sesionController}/{action=OlvidarContrasena}");
+                    pattern: "{controller=Inicio_de_sesion}/{action=OlvidarContrasena}");
 
                 endpoints.MapControllerRoute(
                     name: "default",

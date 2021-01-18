@@ -20,7 +20,7 @@ namespace Registro_y_control_de_extintores.Controllers
         {
             HttpContext.Session.Remove("SessionUser");
             HttpContext.Session.Clear();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Inicio_de_sesion", "Inicio_de_sesion");
         }
 
         [HttpGet]
@@ -42,7 +42,6 @@ namespace Registro_y_control_de_extintores.Controllers
             }
             else
             {
-
                 tipo = "cedula";
             }
 
@@ -60,15 +59,12 @@ namespace Registro_y_control_de_extintores.Controllers
                 conexion.con.Close();
             }
 
-
-            return RedirectToAction("index", "Home");
-            
+            return RedirectToAction("Inicio_de_sesion", "Inicio_de_sesion");
         }
 
         [HttpGet]
-        public string Autenticar_usuario(string uname, string psw)
+        public IActionResult Autenticar_usuario(string uname, string psw)
         {
-
             Conexion con = new Conexion();
             MySqlCommand cmd = null;
             MySqlDataReader reader = null;
@@ -99,8 +95,8 @@ namespace Registro_y_control_de_extintores.Controllers
                 reader = cmd.ExecuteReader();
                 if (!reader.HasRows)
                 {
-                    //return View("Autenticar_usuario");
-                    return "No se encontro el usuario.";
+                    TempData["msg"] = "Error de autenticación";
+                    return RedirectToAction("Inicio_de_sesion", "Inicio_de_sesion");
                 }
 
                 while (reader.Read())
@@ -123,26 +119,28 @@ namespace Registro_y_control_de_extintores.Controllers
 
                 if (correo_bd == uname && password_bd == psw || cedula_db.ToString() == uname && password_bd == psw)
                 {
-                    var user = JsonConvert.DeserializeObject<Inicio_de_sesion>(HttpContext.Session.GetString("SessionUser"));
-                    //return RedirectToAction("index", "Home");
+                    //HttpContext.Session.SetString("SessionUser", JsonConvert.SerializeObject(userInfo));
+                    //var user = JsonConvert.DeserializeObject<Inicio_de_sesion>(HttpContext.Session.GetString("SessionUser"));
                     if (administrador_bd > 0)
                     {
-                        return "Bienvenido " + uname + ", se ha logeado correctamente como administrador.";
+                        HttpContext.Session.SetString("SessionUser", uname);
+                        return RedirectToAction("MostrarMenuPrincipal", "MenuPrincipal");
                     }
                     else {
-                        return "Bienvenido " + uname + ", se ha logeado correctamente como usuario.";
+                        HttpContext.Session.SetString("SessionUser", uname);
+                        return RedirectToAction("MostrarMenuPrincipal", "MenuPrincipal");
                     }
                 }
                 else
                 {
-                    //return View("Autenticar_usuario");
-                    return "Credenciales inválidas.";
+                    TempData["msg"] = "Error de autenticación";
+                    return RedirectToAction("Inicio_de_sesion", "Inicio_de_sesion");
                 }
             }
             catch (Exception ex)
             {
-                //return View("Autenticar_usuario");
-                return ex.ToString();
+                TempData["msg"] = "Error de autenticación";
+                return RedirectToAction("Inicio_de_sesion", "Inicio_de_sesion");
             }
             finally
             {
