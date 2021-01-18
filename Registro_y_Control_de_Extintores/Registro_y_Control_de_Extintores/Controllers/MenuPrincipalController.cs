@@ -12,6 +12,8 @@ using System.Web;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MySqlConnector;
 using System.Diagnostics;
+using ClosedXML.Excel;
+using System.IO;
 
 namespace Registro_y_control_de_extintores.Controllers
 {
@@ -29,6 +31,13 @@ namespace Registro_y_control_de_extintores.Controllers
             ViewBag.ListaCentrosExtintores = lista_centros;
             //despliega el menu principal del manejo de usuarios
             return View("MenuPrincipal");
+        }
+
+        public FileContentResult DescargarDatos()
+        {
+            CrudExtintor Datos = new CrudExtintor();
+            var contenido = Datos.DescargarDatos();
+            return File(contenido, "application/vnd.openxmlformats-officedocument-spreadsheetml.sheet", "Datos Extintores.xlsx");
         }
 
     }
