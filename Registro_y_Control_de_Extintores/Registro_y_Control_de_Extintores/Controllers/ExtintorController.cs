@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using MySqlConnector;
 using Registro_y_control_de_extintores.Models;
 
 namespace Registro_y_control_de_extintores.Controllers
 {
     public class ExtintorController : Controller
     {
+        CrudCentro crudCentro = new CrudCentro();
         CrudExtintor crud = new CrudExtintor();
         ExtintorModel ExtintorModel = new ExtintorModel();
 
@@ -24,6 +27,8 @@ namespace Registro_y_control_de_extintores.Controllers
 
         public IActionResult Crear()
         {
+            List<CentroDeTrabajoModel> centrosDeTrabajo = crudCentro.ObtenerDatosDeCentros();
+            ViewBag.ListaCentros = centrosDeTrabajo;
             return View();
         }
 
@@ -72,8 +77,6 @@ namespace Registro_y_control_de_extintores.Controllers
                 ExtintorModel.Condicion_boquilla = condicion_boquilla;
                 crud.extintor = ExtintorModel;
                 crud.Crear_Extintor();
-                //Console.WriteLine(ultima_prueba_hidrostatica);
-                //Console.WriteLine(acceso_a_extintor);
                 return RedirectToAction("index", "Home");
             }
 
