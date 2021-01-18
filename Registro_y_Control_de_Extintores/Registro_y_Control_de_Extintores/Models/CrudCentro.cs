@@ -49,7 +49,6 @@ namespace Registro_y_control_de_extintores.Models
         }
 
         public List<CentroDeTrabajoModel> ObtenerDatosDeCentros() {
-
             //configuracion de mysql
             Conexion mainconn = new Conexion();
             MySqlCommand cmd = null;
