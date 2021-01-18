@@ -115,9 +115,12 @@ namespace Registro_y_control_de_extintores.Models
                     details.Ubicacion = reader["ubicacion"].ToString();
                     details.Agente_extintor = reader["agente_extintor"].ToString();
                     details.Capacidad = (int)reader["capacidad"];
-                    details.Ultima_prueba_hidrostatica = reader["ultima_prueba_hidrostatica"].ToString();
-                    details.Proxima_prueba_hidrostatica = reader["proxima_prueba_hidrostatica"].ToString();
-                    details.Proximo_mantenimiento = reader["proximo_mantenimiento"].ToString();
+                    string[] date = reader["ultima_prueba_hidrostatica"].ToString().Split(" ");
+                    details.Ultima_prueba_hidrostatica = date[0];
+                    date = reader["proxima_prueba_hidrostatica"].ToString().Split(" ");
+                    details.Proxima_prueba_hidrostatica = date[0];
+                    date = reader["proximo_mantenimiento"].ToString().Split(" ");
+                    details.Proximo_mantenimiento = date[0];
                     details.Presion = (int)(ulong)reader["presion"];
                     details.Rotulacion = (int)reader["rotulacion"];
                     details.Acceso_a_extintor = (int)(ulong)reader["acceso_a_extintor"];
