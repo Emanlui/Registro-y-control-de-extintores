@@ -16,6 +16,11 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="wrapper fadeInDown" style="margin: auto; width: 70%; border: 6px solid blue; padding: 100px;">
+
+    <div id="errMsg" class="alert alert-light" role="alert">
+        @TempData["msg"]
+    </div>
+
     <div id="formContent">
 
         <form asp-action="Autenticar_usuario" asp-controller="Inicio_de_sesion" method="GET">
