@@ -24,9 +24,9 @@ namespace Registro_y_control_de_extintores
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddSession(option =>
-            {
-                option.IdleTimeout = TimeSpan.FromMinutes(15);
+            services.AddSession(option =>
+            {
+                option.IdleTimeout = TimeSpan.FromMinutes(15);
             });
         }
 
@@ -92,6 +92,11 @@ namespace Registro_y_control_de_extintores
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Inicio_de_sesionController}/{action=OlvidarContrasena}");
+
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=MenuPrincipal}/{action=MostrarMenuPrincipal}");
+
             });
         }
     }

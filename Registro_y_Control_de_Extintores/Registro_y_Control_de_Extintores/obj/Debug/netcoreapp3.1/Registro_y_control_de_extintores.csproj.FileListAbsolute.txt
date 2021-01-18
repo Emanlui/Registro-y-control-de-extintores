@@ -283,3 +283,4 @@ C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Cont
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\Inicio_de_sesion\OlvidarContrasena.cshtml.g.cs
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Header.cshtml.g.cs
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Footer.cshtml.g.cs
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\MenuPrincipal\MenuPrincipal.cshtml.g.cs

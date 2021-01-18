@@ -12,6 +12,8 @@ namespace Registro_y_control_de_extintores.Models
         public int Id_centro { get; set; }
 
         [Required]
+        public string Centro { get; set; }
+
         public string Activo { get; set; }
 
         public string Tipo { get; set; }
@@ -45,5 +47,7 @@ namespace Registro_y_control_de_extintores.Models
         public int Condicion_manguera { get; set; }
 
         public int Condicion_boquilla { get; set; }
+
+        public List<ExtintorModel> ExtintoresInfo { get; set; }
     }
 }
