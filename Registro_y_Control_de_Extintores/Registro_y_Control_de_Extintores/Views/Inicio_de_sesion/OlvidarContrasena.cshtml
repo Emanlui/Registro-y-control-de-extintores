@@ -10,7 +10,7 @@
     <div class="col-md-12">
         <div class="row">
             <div class="col">
-                <h5 style="font-weight:normal;">Cédula o correo: </h5>
+                <h5 style="font-weight:normal;">Correo: </h5>
             </div>
             <div class="col">
                 <input id="uname" name="uname" class="form-control" />
@@ -19,20 +19,6 @@
         <br>
         <div class="row">
             <div class="col">
-                <h5 style="font-weight:normal;">Nueva contraseña: </h5>
-            </div>
-            <div class="col">
-                <input type="password" id="psw" name="psw" class="form-control" />
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col">
-                <h5 style="font-weight:normal;">Reingrese la contraseña: </h5>
-            </div>
-            <div class="col">
-                <input type="password" id="psw2" name="psw2" class="form-control" />
-                <br>
                 <input id="btnModal" style="max-width:30%;" type="submit" value="Cambiar" class="btn btn-primary btn-lg btn-block" />
             </div>
         </div>
@@ -54,40 +40,46 @@
                 <br />
                 <div class="row" align="center">
                     <div class="col">
-                        <form id="olvidarContrasena" style="visibility:hidden" asp-action="OlvidarContrasena" method="get">
-                            <div class="text-danger"></div>
-                            <input style="max-width:30%;" type="submit" value="OK" class="btn btn-primary btn-lg btn-block" />
-                        </form>
-                        <br>
                         <form id="cambiarContrasena" style="visibility:hidden" asp-action="CambiarContrasena" method="post">
                             <div class="text-danger"></div>
-                            <input type="hidden" value="a" id="username" name="username"/>
-                            <input type="hidden" value="a" id="password" name="password"/>
+                            <input type="hidden" value="a" id="username" name="username" />
+                            <input type="hidden" value="a" id="password" name="password" />
                             <input style="max-width:30%;" type="submit" value="OK" class="btn btn-primary btn-lg btn-block" />
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
         <script type="text/javascript">
+
+            var randomstring = Math.random().toString(36).slice(-8);
+
+            function sendEmail() {
+                Email.send({
+                    Host: "smtp.gmail.com",
+                    Username: "Registro y control de extintores",
+                    Password: "wdvxwjohwxahxoow",
+                    To: document.getElementById('uname').value,
+                    From: "faoalv8@gmail.com",                          // CAMBIAR
+                    Subject: "Restablecimiento de contraseña",
+                    Body: "Se otorgará una contraseña temporal para poder acceder a la plataforma de extintores.\n" +
+                        "Contraseña: " + randomstring,
+                });
+            }
+
             $(function () {
 
                 $('#btnModal').click(function () {
 
-                    if (document.getElementById('psw').value != document.getElementById('psw2').value) {
-
-                        $('#modal-container').modal('show');
-                        document.getElementById("txt").innerHTML = "Las contraseñas no coinciden, intentelo nuevamente.";
-                        document.getElementById("olvidarContrasena").style.visibility = "visible";
-                    } else {
-
-                        $('#modal-container').modal('show');
-                        document.getElementById("txt").innerHTML = "Contraseña actualizada correctamente.";
-                        document.getElementById("cambiarContrasena").style.visibility = "visible";
-                        document.getElementById("username").value = document.getElementById('uname').value;
-                        document.getElementById("password").value = document.getElementById('psw').value;
-                    }
+                    sendEmail();
+                    $('#modal-container').modal('show');
+                    document.getElementById("txt").innerHTML = "Se envió más información al correo ingresado.";
+                    document.getElementById("cambiarContrasena").style.visibility = "visible";
+                    document.getElementById("username").value = document.getElementById('uname').value;
+                    document.getElementById("password").value = randomstring;
                 });
             });
         </script>
