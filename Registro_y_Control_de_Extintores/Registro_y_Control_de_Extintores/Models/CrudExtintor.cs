@@ -93,6 +93,9 @@ namespace Registro_y_control_de_extintores.Models
             //lista donde guardaremos los datos de los extintores
             List<ExtintorModel> Data_Obtained = new List<ExtintorModel>();
 
+            CrudCentro nombre_centro = new CrudCentro();
+            
+
             if (!reader.HasRows)
             {
                 //No hay datos
@@ -105,8 +108,8 @@ namespace Registro_y_control_de_extintores.Models
                     var details = new ExtintorModel();
 
                     //datos del extintor que se agregan a la lista del modelo para ser impresos en el menuPrincipal
-                    details.Id_centro = (int)reader["id_centro"];
-
+                    details.Id_centro = (int)reader["id_centro"];                    
+                    details.Centro = nombre_centro.Obtener_Centro_Extintor(details.Id_centro);
                     details.Activo = reader["activo"].ToString();
                     details.Tipo = reader["tipo"].ToString();
                     details.Ubicacion_geografica = reader["ubicacion_geografica"].ToString();
@@ -133,7 +136,6 @@ namespace Registro_y_control_de_extintores.Models
             }
 
             return Data_Obtained;
-
         }
     }
 }
