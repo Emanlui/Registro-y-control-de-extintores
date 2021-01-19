@@ -11,18 +11,20 @@ using System.Configuration;
 using System.Web;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MySqlConnector;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace Registro_y_control_de_extintores.Controllers
 {
     public class MenuUsuarioController : Controller
-    { 
+    {
+        [Authorize(Roles = "Admin,User")]
         public ActionResult MenuPrincipalUsuarios()
         {
             //despliega el menu principal del manejo de usuarios
             return View("MenuUsuario");
         }
 
+        [Authorize(Roles = "Admin,User")]
         public ActionResult CrearUsuarioMenu(CentroDeTrabajoModel ctm)
         {
             //configuracion de mysql
@@ -64,6 +66,7 @@ namespace Registro_y_control_de_extintores.Controllers
             return View("CrearUsuario", ctm);
         }
 
+        [Authorize(Roles = "Admin,User")]
         public ActionResult ModificarUsuarioMenu(CentroDeTrabajoModel ctm)
         {
             //configuracion de mysql
@@ -105,12 +108,14 @@ namespace Registro_y_control_de_extintores.Controllers
             return View("ModificarUsuario", ctm);
         }
 
+        [Authorize(Roles = "Admin,User")]
         public ActionResult EliminarUsuarioMenu()
         {
             //despliega el menu para eliminar usuarios
             return View("EliminarUsuario");
         }
 
+        [Authorize(Roles = "Admin,User")]
         public ActionResult RegistrarUsuarioNuevo(int CedulaUsuario, string clave, string email, Boolean administrador, string CentroTrabajoSeleccionado)
         {
             
@@ -173,6 +178,7 @@ namespace Registro_y_control_de_extintores.Controllers
             return View("MenuUsuario");
         }
 
+        [Authorize(Roles = "Admin,User")]
         public ActionResult ModificarUsuarioExistente(int CedulaUsuario, string NuevaClave, String NuevoCentroTrabajo)
         {
             //Conexion a la base
@@ -227,6 +233,7 @@ namespace Registro_y_control_de_extintores.Controllers
             return View("MenuUsuario");
         }
 
+        [Authorize(Roles = "Admin,User")]
         public ActionResult EliminarUsuarioExistente(int CedulaUsuario)
         {
             //Conexion a la base

@@ -5,6 +5,10 @@ using System;
 using System.Data;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Registro_y_control_de_extintores.Controllers
 {
@@ -23,13 +27,11 @@ namespace Registro_y_control_de_extintores.Controllers
             return RedirectToAction("Inicio_de_sesion", "Inicio_de_sesion");
         }
 
-        [HttpGet]
         public IActionResult OlvidarContrasena()
         {
             return View();
         }
 
-        [HttpPost]
         public IActionResult CambiarContrasena(string username, string password)
         {
             Conexion conexion = new Conexion();
@@ -62,7 +64,8 @@ namespace Registro_y_control_de_extintores.Controllers
             return RedirectToAction("Inicio_de_sesion", "Inicio_de_sesion");
         }
 
-        [HttpGet]
+
+        [HttpPost]
         public IActionResult Autenticar_usuario(string uname, string psw)
         {
             Conexion con = new Conexion();
@@ -121,15 +124,36 @@ namespace Registro_y_control_de_extintores.Controllers
                 {
                     //HttpContext.Session.SetString("SessionUser", JsonConvert.SerializeObject(userInfo));
                     //var user = JsonConvert.DeserializeObject<Inicio_de_sesion>(HttpContext.Session.GetString("SessionUser"));
+
+                    ClaimsIdentity identity = null;
+                    bool IsAuthenticate = false;
+
                     if (administrador_bd > 0)
                     {
-                        HttpContext.Session.SetString("SessionUser", uname);
-                        return RedirectToAction("MostrarMenuPrincipal", "MenuPrincipal");
+                        identity = new ClaimsIdentity(new[]{
+                            new Claim(ClaimTypes.Name, "Admin"),
+                            new Claim(ClaimTypes.Role, "Admin"),
+                        }, CookieAuthenticationDefaults.AuthenticationScheme);
+                        IsAuthenticate = true;
+                        //HttpContext.Session.SetString("SessionUser", uname);
                     }
                     else {
-                        HttpContext.Session.SetString("SessionUser", uname);
+                        identity = new ClaimsIdentity(new[]{
+                            new Claim(ClaimTypes.Name, "User"),
+                            new Claim(ClaimTypes.Role, "User"),
+                        }, CookieAuthenticationDefaults.AuthenticationScheme);
+                        IsAuthenticate = true;
+                        //HttpContext.Session.SetString("SessionUser", uname);
+                    }
+                    if (IsAuthenticate) {
+
+                        var principal = new ClaimsPrincipal(identity);
+                        var login = HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+
                         return RedirectToAction("MostrarMenuPrincipal", "MenuPrincipal");
                     }
+                    TempData["msg"] = "Error de autenticación";
+                    return RedirectToAction("Inicio_de_sesion", "Inicio_de_sesion");
                 }
                 else
                 {
