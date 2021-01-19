@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Registro_y_control_de_extintores.Models;
 
@@ -13,10 +14,7 @@ namespace Registro_y_control_de_extintores.Controllers
         CrudCentro crud = new CrudCentro();
         CentroDeTrabajoModel ctm = new CentroDeTrabajoModel();
 
-        public string prueba()
-        {
-            return "Hola, esta es una prueba" + User.Identity.Name;
-        }
+        [Authorize(Roles = "Admin")]
         public IActionResult Administrar()
         {
             List<CentroDeTrabajoModel> centrosDeTrabajo = crud.ObtenerDatosDeCentros();
@@ -25,6 +23,7 @@ namespace Registro_y_control_de_extintores.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public IActionResult CrearRequest(string nombre)
         {
 
@@ -45,6 +44,7 @@ namespace Registro_y_control_de_extintores.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public IActionResult EliminarRequest(string nombre)
         {
             if (!String.IsNullOrEmpty(nombre))

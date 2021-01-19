@@ -14,11 +14,13 @@ using MySqlConnector;
 using System.Diagnostics;
 using ClosedXML.Excel;
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Registro_y_control_de_extintores.Controllers
 {
     public class MenuPrincipalController : Controller
     {
+        [Authorize(Roles = "Admin,User")]
         public ActionResult MostrarMenuPrincipal()
         {
             CrudExtintor info_Extintores = new CrudExtintor();
@@ -33,6 +35,7 @@ namespace Registro_y_control_de_extintores.Controllers
             return View("MenuPrincipal");
         }
 
+        [Authorize(Roles = "Admin,User")]
         public FileContentResult DescargarDatos()
         {
             CrudExtintor Datos = new CrudExtintor();
