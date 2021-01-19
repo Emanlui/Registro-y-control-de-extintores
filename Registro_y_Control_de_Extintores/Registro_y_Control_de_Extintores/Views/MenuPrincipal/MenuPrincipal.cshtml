@@ -71,10 +71,9 @@
                         <!--iteration to fill the table with the data-->
                         @foreach (var item in ViewBag.ListaExtintores)
                         {
-                    <tr>
                         <td><input type="submit" value="@item.Id_centro" location.href = '@Url.Action("Editar", "Extintor", new { area = "MyArea", id = @item.Id_centro})' class="btn btn-primary btn-lg btn-block" /></td>
                         <td><input type="submit" value="Imagen" formaction="@Url.Action("accion","controller")" formmethod="get" class="btn btn-primary btn-lg btn-block" /></td>
-                        <td value="@item.Id_centro">@ViewBag.ListaCentrosExtintores[0]</td>
+                                <td value="@item.Id_centro">@item.Centro</td>
 
                         <!--Separar los fors aquí-->
                         <td>@item.Activo </td>
