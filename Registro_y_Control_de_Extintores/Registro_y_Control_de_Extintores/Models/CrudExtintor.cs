@@ -256,5 +256,12 @@ namespace Registro_y_control_de_extintores.Models
 
             }
         }
+
+        public void Editar_Extintor(int id_extintor)
+        {
+
+
+
+        }
     }
 }

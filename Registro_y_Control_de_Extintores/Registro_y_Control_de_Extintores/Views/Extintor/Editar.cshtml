@@ -1,0 +1,210 @@
+﻿@model Registro_y_control_de_extintores.Models.ExtintorModel
+
+@{ ViewData["Title"] = "Editar extintor"; }
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<h1>@ViewData["Title"]</h1>
+<br>
+<form asp-action="EditarRequest">
+    <div class="row" align="center">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col">
+                    <h5 style="font-weight:normal;">Id centro</h5>
+                    <select id="id_centro" name="id_centro" asp-for="Id_centro">
+                        @foreach (var item in ViewBag.ListaCentros)
+                        {
+                            <option value="@item.Id">@item.Nombre</option>
+                        }
+                    </select>
+                </div>
+                <div class="col">
+                    <h5 style="font-weight:normal;">Activo</h5>
+                    <input id="activo" type="text" asp-for="Activo" class="form-control" />
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <h5 style="font-weight:normal;">Ubicación geográfica</h5>
+                    <input id="ubicacion_geografica" type="text" asp-for="Ubicacion_geografica" class="form-control" />
+                </div>
+                <div class="col">
+                    <h5 style="font-weight:normal;">Ubicación</h5>
+                    <input id="ubicacion" type="text" asp-for="Ubicacion" class="form-control" />
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <h5 style="font-weight:normal;">Agente extintor</h5>
+                    <input id="agente" type="text" asp-for="Agente_extintor" class="form-control" />
+                </div>
+                <div class="col">
+                    <h5 style="font-weight:normal;">Capacidad</h5>
+                    <div class="row">
+                        <div class="col">
+                            <select name="capacidad" id="capacidad">
+                                <option id="capacidad_5" name="capacidad" value="5" type="radio" asp-for="Capacidad" class="form-control">5 libras</option>
+                                <option id="capacidad_10" name="capacidad" value="10" type="radio" asp-for="Capacidad" class="form-control">10 libras</option>
+                                <option id="capacidad_15" name="capacidad" value="15" type="radio" asp-for="Capacidad" class="form-control">15 libras</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <h5 style="font-weight:normal;">Última prueba hidrostática</h5>
+                    <input id="ultima_prueba_hidrostatica" type="date" asp-for="Ultima_prueba_hidrostatica" class="form-control" />
+                </div>
+                <div class="col">
+                    <h5 style="font-weight:normal;">Próximo mantenimiento</h5>
+                    <input id="proximo_mantenimiento" type="date" asp-for="Proximo_mantenimiento" class="form-control" />
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <h5 style="font-weight:normal;">Presión</h5>
+                    <div class="row">
+                        <div class="col">
+                            <label>Correcta</label>
+                            <br>
+                            <label>Incorrecta</label>
+                        </div>
+                        <div class="col">
+                            <input id="presion_bien" name="presion" value="1" type="radio" asp-for="Presion" class="form-control" />
+                            <input id="presion_mal" name="presion" value="0" type="radio" asp-for="Presion" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h5 style="font-weight:normal;">Rotulación</h5>
+                    <div class="row">
+                        <div class="col">
+                            <label>Correcta</label>
+                            <br>
+                            <label>Incorrecta</label>
+                            <br>
+                            <label>No cuenta</label>
+                        </div>
+                        <div class="col">
+                            <input id="rotulacion_correcta" name="rotulacion" value="1" type="radio" asp-for="Rotulacion" class="form-control" />
+                            <input id="rotulacion_incorrecta" name="rotulacion" value="0" type="radio" asp-for="Rotulacion" class="form-control" />
+                            <input id="rotulacion_nocuenta" name="rotulacion" value="-1" type="radio" asp-for="Rotulacion" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <h5 style="font-weight:normal;">Acceso de extintor</h5>
+                    <div class="row">
+                        <div class="col">
+                            <label>Si</label>
+                            <br>
+                            <label>No</label>
+                        </div>
+                        <div class="col">
+                            <input id="acceso_a_extintor_bien" name="acceso_a_extintor" value="1" type="radio" asp-for="Acceso_a_extintor" class="form-control" />
+                            <input id="acceso_a_extintor_mal" name="acceso_a_extintor" value="0" type="radio" asp-for="Acceso_a_extintor" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h5 style="font-weight:normal;">Condición de extintor</h5>
+                    <div class="row">
+                        <div class="col">
+                            <label>Bueno</label>
+                            <br>
+                            <label>Malo</label>
+                        </div>
+                        <div class="col">
+                            <input id="condicion_de_extintor_bien" name="condicion_de_extintor" value="1" type="radio" asp-for="Condicion_extintor" class="form-control" />
+                            <input id="condicion_de_extintor_mal" name="condicion_de_extintor" value="0" type="radio" asp-for="Condicion_extintor" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <h5 style="font-weight:normal;">Seguro y marchamo</h5>
+                    <div class="row">
+                        <div class="col">
+                            <label>Bien</label>
+                            <br>
+                            <label>Mal</label>
+                        </div>
+                        <div class="col">
+                            <input id="seguro_marchamo_bien" name="seguro_marchamo" value="1" type="radio" asp-for="Seguro_y_marchamo" class="form-control" />
+                            <input id="seguro_marchamo_mal" name="seguro_marchamo" value="0" type="radio" asp-for="Seguro_y_marchamo" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h5 style="font-weight:normal;">Collarín</h5>
+                    <div class="row">
+                        <div class="col">
+                            <label>Si</label>
+                            <br>
+                            <label>No</label>
+                        </div>
+                        <div class="col">
+                            <input id="collarin_si" name="collarin" value="1" type="radio" asp-for="Collarin" class="form-control" />
+                            <input id="collarin_no" name="collarin" value="0" type="radio" asp-for="Collarin" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <h5 style="font-weight:normal;">Condición manguera</h5>
+                    <div class="row">
+                        <div class="col">
+                            <label>Buena</label>
+                            <br>
+                            <label>Mala</label>
+                        </div>
+                        <div class="col">
+                            <input id="condicion_manguera_buena" name="condicion_manguera" value="1" type="radio" asp-for="Condicion_manguera" class="form-control" />
+                            <input id="condicion_manguera_mala" name="condicion_manguera" value="0" type="radio" asp-for="Condicion_manguera" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h5 style="font-weight:normal;">Condición boquilla</h5>
+                    <div class="row">
+                        <div class="col">
+                            <label>Buena</label>
+                            <br>
+                            <label>Mala</label>
+                        </div>
+                        <div class="col">
+                            <input id="condicion_boquilla_buena" name="condicion_boquilla" value="1" type="radio" asp-for="Condicion_boquilla" class="form-control" />
+                            <input id="condicion_boquilla_mala" name="condicion_boquilla" value="0" type="radio" asp-for="Condicion_boquilla" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <h5 style="font-weight:normal;">Tipo</h5>
+                    <input id="ubicacion_geografica" type="text" asp-for="Tipo" class="form-control" />
+                </div>
+                <div class="col">
+                    <h5 style="font-weight:normal;">Proxima prueba hidrostática</h5>
+                    <input id="ubicacion" type="date" asp-for="Proxima_prueba_hidrostatica" class="form-control" />
+                </div>
+            </div>
+            <br>
+            <input id="btnModal" style="max-width:30%;" type="submit" value="Editar" align="center" class="btn btn-primary btn-lg btn-block" />
+        </div>
+    </div>
+</form>
