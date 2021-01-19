@@ -35,12 +35,12 @@ namespace Registro_y_control_de_extintores.Controllers
                 crud.centro = ctm;
                 crud.Crear_Centro();
 
-                return RedirectToAction("index", "Home");
+                return RedirectToAction("MostrarMenuPrincipal", "MenuPrincipal");
             }
 
             
             else
-                return RedirectToAction("index", "Home");
+                return RedirectToAction("MostrarMenuPrincipal", "MenuPrincipal");
         }
 
         [HttpPost]
@@ -53,10 +53,10 @@ namespace Registro_y_control_de_extintores.Controllers
                 ctm.Nombre = nombre;
                 crud.centro = ctm;
                 crud.Eliminar_Centro();
-                return RedirectToAction("index", "Home");
+                return RedirectToAction("MostrarMenuPrincipal", "MenuPrincipal");
             }
             else
-                return RedirectToAction("index", "Home");
+                return RedirectToAction("MostrarMenuPrincipal", "MenuPrincipal");
         }
 
     }
