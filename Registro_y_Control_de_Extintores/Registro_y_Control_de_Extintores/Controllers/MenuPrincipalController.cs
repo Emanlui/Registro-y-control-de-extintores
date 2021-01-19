@@ -40,5 +40,15 @@ namespace Registro_y_control_de_extintores.Controllers
             return File(contenido, "application/vnd.openxmlformats-officedocument-spreadsheetml.sheet", "Datos Extintores.xlsx");
         }
 
+        [HttpGet]
+        public ActionResult EditarExtintor(string Activo)
+        {
+            CrudExtintor EditarExtintor = new CrudExtintor();
+
+            EditarExtintor.Editar_Extintor(Activo);
+
+            return View("MenuPrincipal");
+        }
+
     }
 }

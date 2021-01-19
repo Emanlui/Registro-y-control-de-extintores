@@ -136,7 +136,7 @@ namespace Registro_y_control_de_extintores.Models
                     centros_obtenidos.Add(reader["Nombre"].ToString());                                  
                 }
             }
-
+            mainconn.con.Close();
             return centros_obtenidos;
         }
 
@@ -173,6 +173,7 @@ namespace Registro_y_control_de_extintores.Models
                 reader.Read();
                 centro_obtenido = reader["nombre"].ToString();
             }
+            mainconn.con.Close();
             return centro_obtenido;
         }
     }

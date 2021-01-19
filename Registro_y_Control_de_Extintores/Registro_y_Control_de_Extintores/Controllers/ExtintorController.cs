@@ -21,11 +21,6 @@ namespace Registro_y_control_de_extintores.Controllers
             return View("MenuExtintor");
         }
 
-        public string Index()
-        {
-            return "Este es el index de la pagina.";
-        }
-
         public IActionResult Eliminar()
         {
             return View();
@@ -35,6 +30,14 @@ namespace Registro_y_control_de_extintores.Controllers
         {
             List<CentroDeTrabajoModel> centrosDeTrabajo = crudCentro.ObtenerDatosDeCentros();
             ViewBag.ListaCentros = centrosDeTrabajo;
+            return View();
+        }
+
+        public IActionResult Editar(string Activo)
+        {
+            List<CentroDeTrabajoModel> centrosDeTrabajo = crudCentro.ObtenerDatosDeCentros();
+            ViewBag.ListaCentros = centrosDeTrabajo;
+            ViewBag.EditarActivo = Activo;
             return View();
         }
 
@@ -83,12 +86,12 @@ namespace Registro_y_control_de_extintores.Controllers
                 ExtintorModel.Condicion_boquilla = condicion_boquilla;
                 crud.extintor = ExtintorModel;
                 crud.Crear_Extintor();
-                return RedirectToAction("index", "Home");
+                return RedirectToAction("MostrarMenuPrincipal", "MenuPrincipal");
             }
 
 
             else
-                return RedirectToAction("index", "Home");
+                return RedirectToAction("MostrarMenuPrincipal", "MenuPrincipal");
         }
 
         [HttpPost]
@@ -100,10 +103,10 @@ namespace Registro_y_control_de_extintores.Controllers
                 ExtintorModel.Activo = activo;
                 crud.extintor = ExtintorModel;
                 crud.Eliminar_Extintor();
-                return RedirectToAction("index", "Home");
+                return RedirectToAction("MostrarMenuPrincipal", "MenuPrincipal");
             }
             else
-                return RedirectToAction("index", "Home");
+                return RedirectToAction("MostrarMenuPrincipal", "MenuPrincipal");
         }
 
 
@@ -151,13 +154,13 @@ namespace Registro_y_control_de_extintores.Controllers
                 ExtintorModel.Condicion_manguera = condicion_manguera;
                 ExtintorModel.Condicion_boquilla = condicion_boquilla;
                 crud.extintor = ExtintorModel;
-                crud.Crear_Extintor();
-                return RedirectToAction("index", "Home");
+                crud.Editar_Extintor(activo);
+                return RedirectToAction("MostrarMenuPrincipal", "MenuPrincipal");
             }
 
 
             else
-                return RedirectToAction("index", "Home");
+                return RedirectToAction("MostrarMenuPrincipal", "MenuPrincipal");
         }
 
     }

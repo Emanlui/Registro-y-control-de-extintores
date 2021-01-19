@@ -21,7 +21,8 @@
                 </div>
                 <div class="col">
                     <h5 style="font-weight:normal;">Activo</h5>
-                    <input id="activo" type="text" asp-for="Activo" class="form-control" />
+                   
+                    <input id="activo" value ="@ViewBag.EditarActivo" type="text" asp-for="Activo" class="form-control" readonly="readonly" />
                 </div>
             </div>
             <br>

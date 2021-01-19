@@ -29,7 +29,8 @@ namespace Registro_y_control_de_extintores
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSession(option =>
             {
-                option.IdleTimeout = TimeSpan.FromMinutes(15);
+                option.IdleTimeout = TimeSpan.FromMinutes(15);
+
             });
         }
 
@@ -80,7 +81,7 @@ namespace Registro_y_control_de_extintores
 
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Extintor}/{action=Index}");
+                    pattern: "{controller=Extintor}/{action=MenuAdministrarExtintores}");
 
                 endpoints.MapControllerRoute(
                     name: "default",

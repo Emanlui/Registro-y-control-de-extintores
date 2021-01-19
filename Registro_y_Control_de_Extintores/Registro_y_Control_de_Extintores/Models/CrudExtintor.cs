@@ -64,7 +64,7 @@ namespace Registro_y_control_de_extintores.Models
             conexion.con.Open();
             using (MySqlCommand cmd = new MySqlCommand())
             {
-                cmd.CommandText = "Delete from extintor Where activo=@activo";
+                cmd.CommandText = "UPDATE extintor SET habilitado = 0 WHERE activo=@activo";
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = conexion.con;
 
@@ -132,6 +132,7 @@ namespace Registro_y_control_de_extintores.Models
                     details.Collarin = (int)(ulong)reader["collarin"];
                     details.Condicion_manguera = (int)(ulong)reader["condicion_manguera"];
                     details.Condicion_boquilla = (int)(ulong)reader["condicion_boquilla"];
+                    details.Habilitado = (int)(ulong)reader["habilitado"];
 
                     Data_Obtained.Add(details);
                 }
@@ -145,9 +146,7 @@ namespace Registro_y_control_de_extintores.Models
 
             using (var libro_trabajo = new XLWorkbook())
             {
-                var hoja = libro_trabajo.Worksheets.Add("Datos de Extintores"); //nombre de la hoja
-                //hoja.Range("A1:R1").Merge();//establece el estilo en toda la hoja, equivalente a la primera celda
-                //configuracion de aspectos visuales de la hoja
+                var hoja = libro_trabajo.Worksheets.Add("Datos de Extintores"); //nombre de la hoja                
                 hoja.Cell(1, 1).Value = "Id Centro"; //esto debería ser el nombre, para futuras referencias
                 hoja.Cell(1, 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
 
@@ -169,6 +168,7 @@ namespace Registro_y_control_de_extintores.Models
                 hoja.Cell(1, 16).Value = "Collarin";
                 hoja.Cell(1, 17).Value = "Condicion Manguera";
                 hoja.Cell(1, 18).Value = "Condicion Boquilla";
+                hoja.Cell(1, 19).Value = "Habilitado";
 
                 //conexion SQL
                 Conexion conexion = new Conexion();
@@ -244,10 +244,16 @@ namespace Registro_y_control_de_extintores.Models
                     }
                     else { hoja.Cell(i, 18).Value = correcto; }
 
+                    if (fila[19].ToString() == "1")//Habilitado
+                    {
+                        hoja.Cell(i, 19).Value = "Habilitado";
+                    }
+                    else { hoja.Cell(i, 19).Value = "Deshabilitado"; }
+
                     i++;
                 }
                 i = i - 1;
-                hoja.Columns("A", "R").AdjustToContents();
+                hoja.Columns("A", "S").AdjustToContents();
 
                 using (var datos = new MemoryStream())
                 {
@@ -259,11 +265,45 @@ namespace Registro_y_control_de_extintores.Models
             }
         }
 
-        public void Editar_Extintor(int id_extintor)
+        public void Editar_Extintor(string Activo)
         {
+            Conexion conexion = new Conexion();
+            conexion.con.Open();
+            using (MySqlCommand cmd = new MySqlCommand())
+            {
+                cmd.CommandText = "UPDATE extintor SET id_centro = @id_centro, activo = @activo, tipo = @tipo," +
+                "ubicacion_geografica = @ubicacion_geografica, ubicacion = @ubicacion, agente_extintor = @agente_extintor , " +
+                "capacidad = @capacidad, ultima_prueba_hidrostatica = @ultima_prueba_hidrostatica, proxima_prueba_hidrostatica = @proxima_prueba_hidrostatica, " +
+                "proximo_mantenimiento = @proximo_mantenimiento, presion = @presion, rotulacion = @rotulacion, acceso_a_extintor = @acceso_a_extintor, condicion_extintor = @condicion_extintor, " +
+                "seguro_y_marchamo = @seguro_y_marchamo, collarin = @collarin, condicion_manguera = @condicion_manguera, condicion_boquilla = @condicion_boquilla " +
+                "WHERE activo = " + Activo.ToString();
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = conexion.con;
+
+                cmd.Parameters.Add("@id_centro", MySqlDbType.Int32).Value = extintor.Id_centro;
+                cmd.Parameters.Add("@activo", MySqlDbType.VarChar).Value = extintor.Activo;
+                cmd.Parameters.Add("@tipo", MySqlDbType.VarChar).Value = extintor.Tipo;
+                cmd.Parameters.Add("@ubicacion_geografica", MySqlDbType.VarChar).Value = extintor.Ubicacion_geografica;
+                cmd.Parameters.Add("@ubicacion", MySqlDbType.VarChar).Value = extintor.Ubicacion;
+                cmd.Parameters.Add("@agente_extintor", MySqlDbType.VarChar).Value = extintor.Agente_extintor;
+                cmd.Parameters.Add("@capacidad", MySqlDbType.Int32).Value = extintor.Capacidad;
+                cmd.Parameters.Add("@ultima_prueba_hidrostatica", MySqlDbType.Date).Value = extintor.Ultima_prueba_hidrostatica;
+                cmd.Parameters.Add("@proxima_prueba_hidrostatica", MySqlDbType.Date).Value = extintor.Proxima_prueba_hidrostatica;
+                cmd.Parameters.Add("@proximo_mantenimiento", MySqlDbType.Date).Value = extintor.Proximo_mantenimiento;
+                cmd.Parameters.Add("@presion", MySqlDbType.Int32).Value = extintor.Presion;
+                cmd.Parameters.Add("@rotulacion", MySqlDbType.Int32).Value = extintor.Rotulacion;
+                cmd.Parameters.Add("@acceso_a_extintor", MySqlDbType.Int32).Value = extintor.Acceso_a_extintor;
+                cmd.Parameters.Add("@condicion_extintor", MySqlDbType.Int32).Value = extintor.Condicion_extintor;
+                cmd.Parameters.Add("@seguro_y_marchamo", MySqlDbType.Int32).Value = extintor.Seguro_y_marchamo;
+                cmd.Parameters.Add("@collarin", MySqlDbType.Int32).Value = extintor.Collarin;
+                cmd.Parameters.Add("@condicion_manguera", MySqlDbType.Int32).Value = extintor.Condicion_manguera;
+                cmd.Parameters.Add("@condicion_boquilla", MySqlDbType.Int32).Value = extintor.Condicion_boquilla;
+
+                cmd.ExecuteNonQuery();
+                conexion.con.Close();
 
 
-
+            }
         }
     }
 }
