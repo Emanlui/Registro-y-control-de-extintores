@@ -40,7 +40,8 @@ namespace Registro_y_control_de_extintores
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
             services.AddSession(option =>
             {
-                option.IdleTimeout = TimeSpan.FromMinutes(15);
+                option.IdleTimeout = TimeSpan.FromMinutes(15);
+
             });
         }
 
@@ -90,6 +91,10 @@ namespace Registro_y_control_de_extintores
 		        endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=MenuUsuario}/{action=MenuPrincipalUsuarios}");
+
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Extintor}/{action=MenuAdministrarExtintores}");
 
                 endpoints.MapControllerRoute(
                     name: "default",
