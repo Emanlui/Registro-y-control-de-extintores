@@ -23,6 +23,7 @@ namespace Registro_y_control_de_extintores.Controllers
             return View("MenuExtintor");
         }
 
+        [Authorize(Roles = "Admin,User")]
         public IActionResult Eliminar()
         {
             return View();
@@ -46,6 +47,7 @@ namespace Registro_y_control_de_extintores.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,User")]
         public IActionResult CrearRequest(int id_centro, 
                                             string activo, 
                                             string tipo,
@@ -116,6 +118,7 @@ namespace Registro_y_control_de_extintores.Controllers
 
 
         [HttpPost]
+        [Authorize(Roles = "Admin,User")]
         public IActionResult EditarRequest(int id_centro,
                                             string activo,
                                             string tipo,
