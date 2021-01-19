@@ -15,6 +15,12 @@ namespace Registro_y_control_de_extintores.Controllers
         CrudExtintor crud = new CrudExtintor();
         ExtintorModel ExtintorModel = new ExtintorModel();
 
+        public ActionResult MenuAdministrarExtintores()
+        {
+            //despliega el menu principal para administrar extintores
+            return View("MenuExtintor");
+        }
+
         public string Index()
         {
             return "Este es el index de la pagina.";
