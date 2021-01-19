@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MySqlConnector;
 using Registro_y_control_de_extintores.Models;
@@ -15,6 +16,7 @@ namespace Registro_y_control_de_extintores.Controllers
         CrudExtintor crud = new CrudExtintor();
         ExtintorModel ExtintorModel = new ExtintorModel();
 
+        [Authorize(Roles = "Admin,User")]
         public ActionResult MenuAdministrarExtintores()
         {
             //despliega el menu principal para administrar extintores
@@ -26,6 +28,7 @@ namespace Registro_y_control_de_extintores.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin,User")]
         public IActionResult Crear()
         {
             List<CentroDeTrabajoModel> centrosDeTrabajo = crudCentro.ObtenerDatosDeCentros();
@@ -33,6 +36,7 @@ namespace Registro_y_control_de_extintores.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin,User")]
         public IActionResult Editar(string Activo)
         {
             List<CentroDeTrabajoModel> centrosDeTrabajo = crudCentro.ObtenerDatosDeCentros();
@@ -95,6 +99,7 @@ namespace Registro_y_control_de_extintores.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,User")]
         public IActionResult EliminarRequest(string activo)
         {
             if (!String.IsNullOrEmpty(activo))

@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -9,6 +12,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
+using static Org.BouncyCastle.Math.EC.ECCurve;
 
 namespace Registro_y_control_de_extintores
 {
@@ -27,6 +32,12 @@ namespace Registro_y_control_de_extintores
             services.AddControllersWithViews();
             services.AddMemoryCache();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
             services.AddSession(option =>
             {
                 option.IdleTimeout = TimeSpan.FromMinutes(15);
@@ -48,15 +59,17 @@ namespace Registro_y_control_de_extintores
                 app.UseHsts();
             }
             app.UseStatusCodePages();
-            app.UseStaticFiles();
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseSession();
 
+            app.UseCookiePolicy();
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
