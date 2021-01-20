@@ -137,7 +137,7 @@ namespace Registro_y_control_de_extintores.Models
                     Data_Obtained.Add(details);
                 }
             }
-
+            mainconn.con.Close();
             return Data_Obtained;
         }
 
@@ -261,7 +261,7 @@ namespace Registro_y_control_de_extintores.Models
                     var contenido = datos.ToArray();
                     return contenido;
                 }
-
+                conexion.con.Close();
             }
         }
 
