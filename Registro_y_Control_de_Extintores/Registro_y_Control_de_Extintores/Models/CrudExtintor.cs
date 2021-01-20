@@ -271,12 +271,12 @@ namespace Registro_y_control_de_extintores.Models
             conexion.con.Open();
             using (MySqlCommand cmd = new MySqlCommand())
             {
-                cmd.CommandText = "UPDATE extintor SET id_centro = @id_centro, activo = @activo, tipo = @tipo," +
+                cmd.CommandText = "UPDATE extintor SET id_centro = @id_centro, tipo = @tipo," +
                 "ubicacion_geografica = @ubicacion_geografica, ubicacion = @ubicacion, agente_extintor = @agente_extintor , " +
                 "capacidad = @capacidad, ultima_prueba_hidrostatica = @ultima_prueba_hidrostatica, proxima_prueba_hidrostatica = @proxima_prueba_hidrostatica, " +
                 "proximo_mantenimiento = @proximo_mantenimiento, presion = @presion, rotulacion = @rotulacion, acceso_a_extintor = @acceso_a_extintor, condicion_extintor = @condicion_extintor, " +
                 "seguro_y_marchamo = @seguro_y_marchamo, collarin = @collarin, condicion_manguera = @condicion_manguera, condicion_boquilla = @condicion_boquilla " +
-                "WHERE activo = " + Activo.ToString();
+                "WHERE activo = @activo";
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = conexion.con;
 
@@ -298,7 +298,8 @@ namespace Registro_y_control_de_extintores.Models
                 cmd.Parameters.Add("@collarin", MySqlDbType.Int32).Value = extintor.Collarin;
                 cmd.Parameters.Add("@condicion_manguera", MySqlDbType.Int32).Value = extintor.Condicion_manguera;
                 cmd.Parameters.Add("@condicion_boquilla", MySqlDbType.Int32).Value = extintor.Condicion_boquilla;
-
+                cmd.Parameters.Add("@activo", MySqlDbType.VarChar).Value = Activo.ToString();
+                
                 cmd.ExecuteNonQuery();
                 conexion.con.Close();
 

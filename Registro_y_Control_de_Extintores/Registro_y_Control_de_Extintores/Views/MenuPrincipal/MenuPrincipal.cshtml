@@ -1,6 +1,10 @@
-
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{ ViewData["Title"] = "Menu principal - Usuarios"; }
 <head>
-    <h4 style="text-align: right" ;>Ubicación           Activo</h4>
+    <h1 style="text-align: center" ;>@ViewData["Title"]</h1>
+    <h4 style="text-align: right; visibility: hidden;">FILTROOOOS</h4>
 
     @model Registro_y_control_de_extintores.Controllers.MenuPrincipalController;
 
@@ -20,15 +24,15 @@
         </tr>
         <tr>
             <!--AdministrarExintores button -->
-            <input type="submit" value="Administrar Extintores" onclick="location.href='@Url.Action("","Extintor")'"  class="btn btn-primary btn-lg btn-block" />
+            <input type="submit" value="Administrar Extintores" onclick="location.href='@Url.Action("","Extintor")'" class="btn btn-primary btn-lg btn-block" />
         </tr>
         <tr>
             <!--AdministrarCentrosDeTrabajo button -->
-            <input type="submit" value="Administrar Centros de Trabajo" onclick="location.href='@Url.Action("","Centro")'"  class="btn btn-primary btn-lg btn-block" />
+            <input type="submit" value="Administrar Centros de Trabajo" onclick="location.href='@Url.Action("","Centro")'" class="btn btn-primary btn-lg btn-block" />
         </tr>
         <tr>
             <!--DescargarDatos button -->
-            <input type="button" value="DescargarDatos" onclick="location.href='@Url.Action("DescargarDatos", "MenuPrincipal")'" class="btn btn-primary btn-lg btn-block" /> 
+            <input type="button" value="DescargarDatos" onclick="location.href='@Url.Action("DescargarDatos", "MenuPrincipal")'" class="btn btn-primary btn-lg btn-block" />
         </tr>
     </table>
 </div>
@@ -71,99 +75,81 @@
                         <!--iteration to fill the table with the data-->
                         @foreach (var item in ViewBag.ListaExtintores)
                         {
-                            @if (item.Habilitado == 1)
-                            {
-                                <tr>
-                                    <td><input type="submit" value="Editar" formaction='@Url.Action("Editar", "Extintor", new { Activo = @item.Activo})' class="btn btn-primary btn-lg btn-block" /></td>
-                                    <td><input type="submit" value="Imagen" formaction="@Url.Action("accion","controller")" formmethod="get" class="btn btn-primary btn-lg btn-block" /></td>
-                                    <td value="@item.Id_centro">@item.Centro</td>
+            @if (item.Habilitado == 1)
+            {
+<tr>
+    <td><input type="submit" value="Editar" formaction='@Url.Action("Editar", "Extintor", new { Activo = @item.Activo})' class="btn btn-primary btn-lg btn-block" /></td>
+    <td><input type="submit" value="Imagen" formaction="@Url.Action("accion","controller")" formmethod="get" class="btn btn-primary btn-lg btn-block" /></td>
+    <td value="@item.Id_centro">@item.Centro</td>
 
-                                    <!--Separar los fors aquí-->
-                                    <td>@item.Activo </td>
-                                    <td>@item.Ubicacion_geografica</td>
-                                    <td>@item.Ubicacion</td>
-                                    <td>@item.Agente_extintor</td>
-                                    <td>@item.Tipo</td>
-                                    <td>@item.Capacidad</td>
-                                    <td>@item.Ultima_prueba_hidrostatica</td>
-                                    <td>@item.Proxima_prueba_hidrostatica</td>
-                                    <td>@item.Proximo_mantenimiento</td>
+    <!--Separar los fors aquí-->
+    <td>@item.Activo </td>
+    <td>@item.Ubicacion_geografica</td>
+    <td>@item.Ubicacion</td>
+    <td>@item.Agente_extintor</td>
+    <td>@item.Tipo</td>
+    <td>@item.Capacidad</td>
+    <td>@item.Ultima_prueba_hidrostatica</td>
+    <td>@item.Proxima_prueba_hidrostatica</td>
+    <td>@item.Proximo_mantenimiento</td>
 
-                                    @if (item.Presion == 0)
-                                    {
-                                        <td value=0>Correcto</td>
-                                    }
-                                    else
-                                    {
-                                        <td value=1>Incorrecto</td>
-                                    }
+    @if (item.Presion == 0)
+    {
+<td value=0>Correcto</td> }
+                    else
+                    {
+<td value=1>Incorrecto</td>}
 
-                                    @if (@item.Rotulacion == 0)
-                                    {
-                                        <td value=0>Correcto</td>
-                                    }
-                                    else
-                                    {
-                                        <td value=1>Incorrecto</td>
-                                    }
+    @if (@item.Rotulacion == 0)
+    {
+<td value=0>Correcto</td> }
+                    else
+                    {
+<td value=1>Incorrecto</td>}
 
-                                    @if (@item.Acceso_a_extintor == 0)
-                                    {
-                                        <td value=0>Accesible</td>
-                                    }
-                                    else
-                                    {
-                                        <td value=1>No Accesible</td>
-                                    }
+    @if (@item.Acceso_a_extintor == 0)
+    {
+<td value=0>Accesible</td> }
+                    else
+                    {
+<td value=1>No Accesible</td>}
 
-                                    @if (@item.Condicion_extintor == 0)
-                                    {
-                                        <td value=0>Buen estado</td>
-                                    }
-                                    else
-                                    {
-                                        <td value=1>Mal estado</td>
-                                    }
+    @if (@item.Condicion_extintor == 0)
+    {
+<td value=0>Buen estado</td> }
+                    else
+                    {
+<td value=1>Mal estado</td>}
 
-                                    @if (@item.Seguro_y_marchamo == 0)
-                                    {
-                                        <td value=0>Buen estado</td>
-                                    }
-                                    else
-                                    {
-                                        <td value=1>Mal estado</td>
-                                    }
+    @if (@item.Seguro_y_marchamo == 0)
+    {
+<td value=0>Buen estado</td> }
+                    else
+                    {
+<td value=1>Mal estado</td>}
 
-                                    @if (@item.Collarin == 0)
-                                    {
-                                        <td value=0>Buen estado</td>
-                                    }
-                                    else
-                                    {
-                                        <td value=1>Mal estado</td>
-                                    }
+    @if (@item.Collarin == 0)
+    {
+<td value=0>Buen estado</td> }
+                    else
+                    {
+<td value=1>Mal estado</td>}
 
-                                    @if (@item.Condicion_manguera == 0)
-                                    {
-                                        <td value=0>Buen estado</td>
-                                    }
-                                    else
-                                    {
-                                        <td value=1>Mal estado</td>
-                                    }
+    @if (@item.Condicion_manguera == 0)
+    {
+<td value=0>Buen estado</td> }
+                    else
+                    {
+<td value=1>Mal estado</td>}
 
-                                    @if (@item.Condicion_boquilla == 0)
-                                    {
-                                        <td value=0>Buen estado</td>
-                                    }
-                                    else
-                                    {
-                                        <td value=1>Mal estado</td>
-                                    }
+    @if (@item.Condicion_boquilla == 0)
+    {
+<td value=0>Buen estado</td> }
+                    else
+                    {
+<td value=1>Mal estado</td>}
 
-                                </tr>
-                            }
-                        }
+</tr>}}
                     </table>
                 </div>
             </fieldset>
