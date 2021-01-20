@@ -20,7 +20,7 @@ namespace Registro_y_control_de_extintores.Controllers
 {
     public class MenuPrincipalController : Controller
     {
-        [Authorize(Roles = "Admin,User")]
+        [Authorize(Roles = "Admin")]
         public ActionResult MostrarMenuPrincipal()
         {
             CrudExtintor info_Extintores = new CrudExtintor();
@@ -36,6 +36,21 @@ namespace Registro_y_control_de_extintores.Controllers
         }
 
         [Authorize(Roles = "Admin,User")]
+        public ActionResult MostrarMenuPrincipalUsuario()
+        {
+            CrudExtintor crudExtintor = new CrudExtintor();
+            List<ExtintorModel> lista_extintores = crudExtintor.Obtener_Datos_Extintores();
+
+            CrudCentro crudCentro = new CrudCentro();
+            List<string> lista_centros = crudCentro.Obtener_Centros_Extintores(lista_extintores);
+
+            ViewBag.ListaExtintores = lista_extintores;
+            ViewBag.ListaCentrosExtintores = lista_centros;
+            //despliega el menu principal del manejo de usuarios
+            return View("MenuPrincipalUsuario");
+        }
+
+        [Authorize(Roles = "Admin,User")]
         public FileContentResult DescargarDatos()
         {
             CrudExtintor Datos = new CrudExtintor();
@@ -44,6 +59,7 @@ namespace Registro_y_control_de_extintores.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin,User")]
         public ActionResult EditarExtintor(string Activo)
         {
             CrudExtintor EditarExtintor = new CrudExtintor();
@@ -53,5 +69,10 @@ namespace Registro_y_control_de_extintores.Controllers
             return View("MenuPrincipal");
         }
 
+        [Authorize(Roles = "Admin,User")]
+        public ActionResult MostrarInformacion()
+        {
+            return View();
+        }
     }
 }

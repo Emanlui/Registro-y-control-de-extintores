@@ -2,16 +2,12 @@
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
-@using Microsoft.AspNetCore.Http
-@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
-
 <header>
     <nav style="background-color: rgb(17, 45, 85);">
         <div class="row div-registro" style="width:1920px; height:164px;">
             <a class="nav-link text-dark" asp-area="" asp-controller="MenuPrincipal" asp-action="MostrarMenuPrincipal">
                 <img src="~/images/header-image.jpg" alt="Página principal" width="972" height="154">
             </a>
-            <label id="nombre" style="color: white; visibility:visible;"><h2>@HttpContextAccessor.HttpContext.Session.GetString("SessionUser")</h2></label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a id="inicio" asp-area="" asp-controller="Inicio_de_sesion" asp-action="Inicio_de_sesion" style="color: white; visibility:visible;"><h2>Iniciar sesión</h2></a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
