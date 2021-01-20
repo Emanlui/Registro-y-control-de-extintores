@@ -112,6 +112,14 @@ namespace Registro_y_control_de_extintores
                     name: "default",
                     pattern: "{controller=MenuPrincipal}/{action=MostrarMenuPrincipal}");
 
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=MenuPrincipal}/{action=MostrarMenuPrincipalUsuario}");
+
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=MenuPrincipal}/{action=MostrarInformacion}");
+
             });
         }
     }
