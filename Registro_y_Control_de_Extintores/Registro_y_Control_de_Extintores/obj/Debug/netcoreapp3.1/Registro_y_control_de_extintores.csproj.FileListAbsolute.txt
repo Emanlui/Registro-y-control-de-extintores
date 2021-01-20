@@ -295,3 +295,5 @@ C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Cont
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.csproj.CoreCompileInputs.cache
 C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Registro_y_control_de_extintores.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\Extintor\Editar.cshtml.g.cs
+C:\Users\faoal\Documents\GitHub\Registro-y-control-de-extintores\Registro_y_Control_de_Extintores\Registro_y_control_de_extintores\obj\Debug\netcoreapp3.1\Razor\Views\Extintor\MenuExtintor.cshtml.g.cs
