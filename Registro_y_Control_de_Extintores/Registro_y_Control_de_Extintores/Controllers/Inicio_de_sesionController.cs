@@ -22,6 +22,7 @@ namespace Registro_y_control_de_extintores.Controllers
 
         public IActionResult Cerrar_sesion()
         {
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             HttpContext.Session.Remove("SessionUser");
             HttpContext.Session.Clear();
             return RedirectToAction("Inicio_de_sesion", "Inicio_de_sesion");
