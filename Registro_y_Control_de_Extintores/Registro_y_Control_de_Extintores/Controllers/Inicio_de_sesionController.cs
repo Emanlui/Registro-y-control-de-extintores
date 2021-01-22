@@ -99,7 +99,6 @@ namespace Registro_y_control_de_extintores.Controllers
                 reader = cmd.ExecuteReader();
                 if (!reader.HasRows)
                 {
-                    TempData["msg"] = "Error de autenticación";
                     return RedirectToAction("Inicio_de_sesion", "Inicio_de_sesion");
                 }
 
@@ -119,52 +118,50 @@ namespace Registro_y_control_de_extintores.Controllers
                     }
                 }
 
-                Console.WriteLine("correo:" + correo_bd + " contrasena:" + password_bd);
-
                 if (correo_bd == uname && password_bd == psw || cedula_db.ToString() == uname && password_bd == psw)
                 {
-                    //HttpContext.Session.SetString("SessionUser", JsonConvert.SerializeObject(userInfo));
-                    //var user = JsonConvert.DeserializeObject<Inicio_de_sesion>(HttpContext.Session.GetString("SessionUser"));
-
                     ClaimsIdentity identity = null;
                     bool IsAuthenticate = false;
+                    int admin = 0;
 
                     if (administrador_bd > 0)
                     {
                         identity = new ClaimsIdentity(new[]{
-                            new Claim(ClaimTypes.Name, "Admin"),
+                            new Claim(ClaimTypes.Name, "Administrador"),
                             new Claim(ClaimTypes.Role, "Admin"),
                         }, CookieAuthenticationDefaults.AuthenticationScheme);
                         IsAuthenticate = true;
-                        //HttpContext.Session.SetString("SessionUser", uname);
+                        admin = 1;
                     }
                     else {
                         identity = new ClaimsIdentity(new[]{
-                            new Claim(ClaimTypes.Name, "User"),
+                            new Claim(ClaimTypes.Name, "Usuario"),
                             new Claim(ClaimTypes.Role, "User"),
                         }, CookieAuthenticationDefaults.AuthenticationScheme);
                         IsAuthenticate = true;
-                        //HttpContext.Session.SetString("SessionUser", uname);
                     }
                     if (IsAuthenticate) {
 
                         var principal = new ClaimsPrincipal(identity);
                         var login = HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+                        if (admin == 1) {
 
-                        return RedirectToAction("MostrarMenuPrincipal", "MenuPrincipal");
+                            return RedirectToAction("MostrarMenuPrincipal", "MenuPrincipal");
+                        }
+                        else
+                        {
+                            return RedirectToAction("MostrarMenuPrincipalUsuario", "MenuPrincipal");
+                        }
                     }
-                    TempData["msg"] = "Error de autenticación";
                     return RedirectToAction("Inicio_de_sesion", "Inicio_de_sesion");
                 }
                 else
                 {
-                    TempData["msg"] = "Error de autenticación";
                     return RedirectToAction("Inicio_de_sesion", "Inicio_de_sesion");
                 }
             }
             catch (Exception ex)
             {
-                TempData["msg"] = "Error de autenticación";
                 return RedirectToAction("Inicio_de_sesion", "Inicio_de_sesion");
             }
             finally

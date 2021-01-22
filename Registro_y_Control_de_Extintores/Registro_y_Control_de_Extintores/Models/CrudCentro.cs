@@ -112,7 +112,7 @@ namespace Registro_y_control_de_extintores.Models
                 }
             }
 
-            string Query_Data = "SELECT * FROM centro_de_trabajo WHERE id IN (" + centros_ids+")";
+            string Query_Data = "SELECT * FROM centro_de_trabajo WHERE id IN (" + centros_ids + ")";
             cmd = new MySqlCommand(Query_Data, mainconn.con);
             cmd.CommandType = CommandType.Text;
             Debug.WriteLine("QUERY: "+Query_Data);
