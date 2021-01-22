@@ -1,6 +1,6 @@
 ﻿namespace Registro_y_control_de_extintores.Models
 {
-    class Inicio_de_sesion
+    public class Inicio_de_sesion
     {
         public int Id { get; set; }
 
