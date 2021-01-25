@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -140,14 +141,14 @@ namespace Registro_y_control_de_extintores.Models
             mainconn.con.Close();
             return Data_Obtained;
         }
-
+       
         public byte[] DescargarDatos() {
 
 
             using (var libro_trabajo = new XLWorkbook())
             {
                 var hoja = libro_trabajo.Worksheets.Add("Datos de Extintores"); //nombre de la hoja                
-                hoja.Cell(1, 1).Value = "Id Centro"; //esto debería ser el nombre, para futuras referencias
+                hoja.Cell(1, 1).Value = "Centro de Trabajo"; //esto debería ser el nombre, para futuras referencias
                 hoja.Cell(1, 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
 
                 //encabezados
@@ -173,15 +174,16 @@ namespace Registro_y_control_de_extintores.Models
                 //conexion SQL
                 Conexion conexion = new Conexion();
                 DataTable dt = new DataTable();
-                MySqlDataAdapter ad = new MySqlDataAdapter("SELECT * FROM extintor", conexion.con);
+                MySqlDataAdapter ad = new MySqlDataAdapter("SELECT * FROM extintor WHERE habilitado = 1", conexion.con);
                 ad.Fill(dt);
                 int i = 2;
                 //por si se necesita cambiar la palabra clave a la hora de imprimir los datos
                 string incorrecto = "Incorrecto";
                 string correcto = "Correcto";
+                CrudCentro centro = new CrudCentro();
                 foreach (DataRow fila in dt.Rows)
                 {
-                    hoja.Cell(i, 1).Value = fila[1].ToString();//id centro
+                    hoja.Cell(i, 1).Value = centro.Obtener_Centro_Extintor((int)fila[1]);//id centro
                     hoja.Cell(i, 2).Value = fila[3].ToString();//tipo
                     hoja.Cell(i, 3).Value = fila[4].ToString();//activo
                     hoja.Cell(i, 4).Value = fila[5].ToString();//ubicacion geografica
@@ -244,7 +246,7 @@ namespace Registro_y_control_de_extintores.Models
                     }
                     else { hoja.Cell(i, 18).Value = correcto; }
 
-                    if (fila[19].ToString() == "1")//Habilitado
+                    if (fila[19].ToString() == "0")//Habilitado
                     {
                         hoja.Cell(i, 19).Value = "Habilitado";
                     }
@@ -253,6 +255,7 @@ namespace Registro_y_control_de_extintores.Models
                     i++;
                 }
                 i = i - 1;
+
                 hoja.Columns("A", "S").AdjustToContents();
 
                 using (var datos = new MemoryStream())
