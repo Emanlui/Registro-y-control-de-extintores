@@ -1,0 +1,89 @@
+﻿@{ ViewData["Title"] = "Olvidé mi contraseña"; }
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<h1 style="text-align: center" ;>@ViewData["Title"]</h1>
+
+@model Registro_y_control_de_extintores.Controllers.Inicio_de_sesionController
+<br>
+
+<div class="row" align="center">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col">
+                <h5 style="font-weight:normal;">Correo: </h5>
+            </div>
+            <div class="col">
+                <input id="uname" name="uname" class="form-control" />
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <input id="btnModal" style="max-width:30%;" type="submit" value="Cambiar" class="btn btn-primary btn-lg btn-block" />
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+
+@*Modal Dialog Container*@
+
+<div id="modal-container" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:500px !important; margin: 10px auto !important; height:300px !important;">
+            <div class="modal-header">
+                <button data-dismiss="modal" class="close"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+
+                <h5 align="center" id="txt" style="font-weight:normal"> aaa</h5>
+                <br />
+                <div class="row" align="center">
+                    <div class="col">
+                        <form id="cambiarContrasena" style="visibility:hidden" asp-action="CambiarContrasena" method="post">
+                            <div class="text-danger"></div>
+                            <input type="hidden" value="a" id="username" name="username" />
+                            <input type="hidden" value="a" id="password" name="password" />
+                            <input style="max-width:30%;" type="submit" value="OK" class="btn btn-primary btn-lg btn-block" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script type="text/javascript">
+
+            var randomstring = Math.random().toString(36).slice(-8);
+
+            function sendEmail() {
+                Email.send({
+                    Host: "smtp.gmail.com",
+                    Username: "faoalv8@gmail.com",
+                    Password: "wdvxwjohwxahxoow",
+                    To: document.getElementById('uname').value,
+                    From: "faoalv8@gmail.com",                          // CAMBIAR
+                    Subject: "Restablecimiento de contraseña",
+                    Body: "Se otorgará una contraseña temporal para poder acceder a la plataforma de extintores.\n" +
+                        "Contraseña: " + randomstring,
+                });
+            }
+
+            $(function () {
+
+                $('#btnModal').click(function () {
+
+                    sendEmail();
+                    $('#modal-container').modal('show');
+                    document.getElementById("txt").innerHTML = "Se envió más información al correo ingresado.";
+                    document.getElementById("cambiarContrasena").style.visibility = "visible";
+                    document.getElementById("username").value = document.getElementById('uname').value;
+                    document.getElementById("password").value = randomstring;
+                });
+            });
+        </script>
+
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
