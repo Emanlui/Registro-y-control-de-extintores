@@ -49,9 +49,9 @@ MySqlConnector
 Varias de ellas se podrán instalar fácilmente por medio del administrador de herramientas del Visual Studio
 ```
 
-Para ejecutar el proyecto, necesitará instalar varias bibliotecas, tales como:
+Una vez instaladas estas dependencias, debería ser posible correr el proyecto en su localhost
 ```
-until finished
+El proyecto está planificado para funcionar en servidor web, para efectos de desarrollo al ejecutarse se abrirá en el localhost como hosteo web de prueba
 ```
 
 
@@ -63,7 +63,7 @@ until finished
 ## FAQ
 * Podrá encontrar más detalles sobre las preguntas frecuentes encontradas en el [FAQ.md](FAQ.md)
 
-## Authors
+## Autores
 
 * **Emanuelle Jiménez Sancho** - *Desarrollador de Software* - [Emanlui](https://github.com/Emanlui)
 
