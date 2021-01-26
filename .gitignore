@@ -1,0 +1,12 @@
+.idea
+.vs/
+.csproj
+.dll
+.user
+.json
+.props
+.cache
+.exe
+.pdb
+.suo
+.config
